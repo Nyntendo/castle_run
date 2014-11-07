@@ -32,7 +32,7 @@ public class UnitController : MonoBehaviour
 
     public void Update()
     {
-        if (path == null && target != null && !calculatingPath)
+        if (path == null && target != null && !calculatingPath && targetObject == null)
         {
             calculatingPath = true;
             seeker.StartPath(transform.position, target.position, OnPathComplete);
@@ -44,12 +44,6 @@ public class UnitController : MonoBehaviour
         if (attackTimer > 0f)
         {
             attackTimer -= Time.fixedDeltaTime;
-        }
-
-        if (path == null || currentWaypoint >= path.vectorPath.Count)
-        {
-            path = null;
-            return;
         }
 
         if (targetObject != null)
@@ -69,6 +63,7 @@ public class UnitController : MonoBehaviour
 
         if (targetObject != null)
         {
+            path = null;
             var distance = Vector3.Distance(transform.position, targetObject.transform.position);
             var hitRange = targetObject.GetComponent<Attackable>().hitRange;
 
@@ -80,6 +75,12 @@ public class UnitController : MonoBehaviour
 
             var targetDir = (targetObject.transform.position - transform.position).normalized;
             controller.SimpleMove(targetDir * speed * Time.fixedDeltaTime);
+            return;
+        }
+
+        if (path == null || currentWaypoint >= path.vectorPath.Count)
+        {
+            path = null;
             return;
         }
 
