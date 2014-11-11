@@ -12,6 +12,7 @@ public class SpawnerController : MonoBehaviour
     public GameObject unitToSpawn;
     public float spawnDelay;
     public Team team;
+    public Vector3 spawnOffset;
 
     private float spawnTimer;
     private GameObject target;
@@ -36,7 +37,7 @@ public class SpawnerController : MonoBehaviour
         {
             var unit = Instantiate(
                     unitToSpawn,
-                    transform.position + Vector3.forward * 2 * ((team == Team.Pink)?-1:1),
+                    transform.position + spawnOffset * ((team == Team.Pink)?-1:1),
                     Quaternion.identity) as GameObject;
 
             if (target != null)
