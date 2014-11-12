@@ -5,6 +5,8 @@ Project("{B389569B-F91F-F69D-9C6B-1445D233F261}") = "CastleRun", "Assembly-CShar
 EndProject
 Project("{B389569B-F91F-F69D-9C6B-1445D233F261}") = "CastleRun", "Assembly-CSharp-Editor.csproj", "{C1E17E02-A0C5-8EC9-F732-72BF0C46A4D2}"
 EndProject
+Project("{B389569B-F91F-F69D-9C6B-1445D233F261}") = "CastleRun", "Assembly-UnityScript-firstpass.unityproj", "{CCAEB542-9279-E88E-71BF-D26BBEFA97EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,11 +21,15 @@ Global
 		{C1E17E02-A0C5-8EC9-F732-72BF0C46A4D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1E17E02-A0C5-8EC9-F732-72BF0C46A4D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1E17E02-A0C5-8EC9-F732-72BF0C46A4D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCAEB542-9279-E88E-71BF-D26BBEFA97EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCAEB542-9279-E88E-71BF-D26BBEFA97EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCAEB542-9279-E88E-71BF-D26BBEFA97EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCAEB542-9279-E88E-71BF-D26BBEFA97EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-											GlobalSection(MonoDevelopProperties) = preSolution
+															GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

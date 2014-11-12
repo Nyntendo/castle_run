@@ -15,6 +15,6 @@ public class ScrollingTexture : MonoBehaviour {
 			offset = 0;
 		}
 		offset += (Time.deltaTime*scrollSpeed)/10.0f;
-		renderer.material.SetTextureOffset("_MainTex", new Vector2(0, offset));
+		renderer.material.SetTextureOffset("_BumpMap"/*"_MainTex"*/, new Vector2(0, offset));
 	}
 }
