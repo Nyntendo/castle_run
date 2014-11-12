@@ -19,7 +19,7 @@ public class Attackable : MonoBehaviour
 
         if (health <= 0)
         {
-            Destroy(gameObject);
+            gameObject.SendMessage("OnDeath");
         }
     }
 

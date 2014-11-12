@@ -14,6 +14,12 @@ public class UnitController : MonoBehaviour
     public int attackDamage;
     public float attackSpeed;
 
+    public string walkAnimation;
+    public string attackAnimation;
+    public string deathAnimation;
+
+    public ParticleSystem attackParticleSystem;
+
     private Path path;
     private Seeker seeker;
     private CharacterController controller;
@@ -22,16 +28,26 @@ public class UnitController : MonoBehaviour
     private bool calculatingPath = false;
     private float attackTimer;
     private GameObject targetObject;
+    private Animation _animation;
+    public bool dead = false;
 
     public void Start()
     {
         seeker = GetComponent<Seeker>();
         controller = GetComponent<CharacterController>();
         attackable = GetComponent<Attackable>();
+
+        _animation = GetComponentInChildren<Animation>();
+        _animation[walkAnimation].wrapMode = WrapMode.Loop;
+        _animation[attackAnimation].wrapMode = WrapMode.Once;
+        _animation[deathAnimation].wrapMode = WrapMode.ClampForever;
     }
 
     public void Update()
     {
+        if (dead)
+            return;
+
         if (path == null && target != null && !calculatingPath && targetObject == null)
         {
             calculatingPath = true;
@@ -41,6 +57,9 @@ public class UnitController : MonoBehaviour
 
     public void FixedUpdate()
     {
+        if (dead)
+            return;
+
         if (attackTimer > 0f)
         {
             attackTimer -= Time.fixedDeltaTime;
@@ -69,12 +88,15 @@ public class UnitController : MonoBehaviour
 
             if (distance <= attackRange + hitRange)
             {
+                transform.LookAt(targetObject.transform.position);
                 Attack(targetObject);
                 return;
             }
 
             var targetDir = (targetObject.transform.position - transform.position).normalized;
-            controller.SimpleMove(targetDir * speed * Time.fixedDeltaTime);
+
+            MoveDir(targetDir);
+
             return;
         }
 
@@ -86,15 +108,19 @@ public class UnitController : MonoBehaviour
 
         var dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
 
-        controller.SimpleMove(dir * speed * Time.fixedDeltaTime);
-
-		Quaternion wanted_rotation = Quaternion.LookRotation(dir);
-		transform.rotation = Quaternion.RotateTowards(transform.rotation, wanted_rotation, 100.0f * Time.deltaTime);
+        MoveDir(dir);
 
         if (Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]) < waypointReachedThreshold)
         {
             currentWaypoint++;
         }
+    }
+
+    private void MoveDir(Vector3 dir)
+    {
+        controller.SimpleMove(dir * speed * Time.fixedDeltaTime);
+        var wanted_rotation = Quaternion.LookRotation(dir);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, wanted_rotation, 100.0f * Time.deltaTime);
     }
 
     public void OnPathComplete(Path path)
@@ -144,7 +170,19 @@ public class UnitController : MonoBehaviour
         if (attackTimer > 0f)
             return;
 
+        if (attackParticleSystem != null)
+            attackParticleSystem.Play();
+
+        _animation.CrossFade(attackAnimation);
+        _animation.CrossFadeQueued(walkAnimation);
         target.SendMessage("Hit", attackDamage);
         attackTimer = attackSpeed;
+    }
+
+    public void OnDeath()
+    {
+        dead = true;
+        _animation.CrossFade(deathAnimation);
+        Destroy(gameObject, 2f);
     }
 }
