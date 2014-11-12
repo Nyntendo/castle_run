@@ -88,6 +88,9 @@ public class UnitController : MonoBehaviour
 
         controller.SimpleMove(dir * speed * Time.fixedDeltaTime);
 
+		Quaternion wanted_rotation = Quaternion.LookRotation(dir);
+		transform.rotation = Quaternion.RotateTowards(transform.rotation, wanted_rotation, 100.0f * Time.deltaTime);
+
         if (Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]) < waypointReachedThreshold)
         {
             currentWaypoint++;
