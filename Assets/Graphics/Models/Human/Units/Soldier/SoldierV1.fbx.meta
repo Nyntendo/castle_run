@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f95ab53290237f74680bad4b4f51fe7a
+guid: 3bce78430f192b2408a4253b1b2bf144
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -18,9 +18,10 @@ ModelImporter:
     100024: joint7
     100026: joint8
     100028: joint9
-    100030: polySurface1
-    100032: polySurface2
-    100034: //RootNode
+    100030: //RootNode
+    100032: polySurface1
+    100034: polySurface2
+    100036: polySurface6
     400000: joint1
     400002: joint10
     400004: joint11
@@ -36,17 +37,20 @@ ModelImporter:
     400024: joint7
     400026: joint8
     400028: joint9
-    400030: polySurface1
-    400032: polySurface2
-    400034: //RootNode
+    400030: //RootNode
+    400032: polySurface1
+    400034: polySurface2
+    400036: polySurface6
     4300000: polySurface2
-    7400000: Zombie_tPose
-    7400002: Zombie_moving
-    7400004: Zombie_attacking
-    7400006: Zombie_dying
+    4300002: polySurface6
+    7400000: soldier_tPose
+    7400002: soldier_moving
+    7400004: soldier_attacking
+    7400006: soldier_dying
     9500000: //RootNode
     11100000: //RootNode
     13700000: polySurface2
+    13700002: polySurface6
   materials:
     importMaterials: 1
     materialName: 0
@@ -64,7 +68,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Zombie_tPose
+      name: soldier_tPose
       takeName: Take 001
       firstFrame: 0
       lastFrame: .100000001
@@ -123,10 +127,12 @@ ModelImporter:
         weight: 1
       - path: polySurface1/polySurface2
         weight: 1
+      - path: polySurface6
+        weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Zombie_moving
+      name: soldier_moving
       takeName: Take 001
       firstFrame: 5
       lastFrame: 35
@@ -185,13 +191,15 @@ ModelImporter:
         weight: 1
       - path: polySurface1/polySurface2
         weight: 1
+      - path: polySurface6
+        weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Zombie_attacking
+      name: soldier_attacking
       takeName: Take 001
-      firstFrame: 35
-      lastFrame: 60
+      firstFrame: 40
+      lastFrame: 55
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -247,10 +255,12 @@ ModelImporter:
         weight: 1
       - path: polySurface1/polySurface2
         weight: 1
+      - path: polySurface6
+        weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: Zombie_dying
+      name: soldier_dying
       takeName: Take 001
       firstFrame: 60
       lastFrame: 100
@@ -308,6 +318,8 @@ ModelImporter:
       - path: polySurface1
         weight: 1
       - path: polySurface1/polySurface2
+        weight: 1
+      - path: polySurface6
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
