@@ -29,7 +29,6 @@ public class UnitController : MonoBehaviour
     private float attackTimer;
     private GameObject targetObject;
     private Animation _animation;
-    public bool dead = false;
 
     public void Start()
     {
@@ -45,7 +44,7 @@ public class UnitController : MonoBehaviour
 
     public void Update()
     {
-        if (dead)
+        if (attackable.dead)
             return;
 
         if (path == null && target != null && !calculatingPath && targetObject == null)
@@ -57,7 +56,7 @@ public class UnitController : MonoBehaviour
 
     public void FixedUpdate()
     {
-        if (dead)
+        if (attackable.dead)
             return;
 
         if (attackTimer > 0f)
@@ -69,7 +68,7 @@ public class UnitController : MonoBehaviour
         {
             var distance = Vector3.Distance(transform.position, targetObject.transform.position);
 
-            if (distance > keepTargetRange)
+            if (distance > keepTargetRange || targetObject.GetComponent<Attackable>().dead)
             {
                 targetObject = null;
             }
@@ -118,9 +117,8 @@ public class UnitController : MonoBehaviour
 
     private void MoveDir(Vector3 dir)
     {
+        transform.LookAt(transform.position + dir);
         controller.SimpleMove(dir * speed * Time.fixedDeltaTime);
-        var wanted_rotation = Quaternion.LookRotation(dir);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, wanted_rotation, 100.0f * Time.deltaTime);
     }
 
     public void OnPathComplete(Path path)
@@ -148,7 +146,7 @@ public class UnitController : MonoBehaviour
         {
             var attackable = colliders[i].GetComponent<Attackable>();
 
-            if (attackable != null && attackable.team != this.attackable.team)
+            if (attackable != null && !attackable.dead && attackable.team != this.attackable.team)
             {
                 var distance = Vector3.Distance(transform.position, colliders[i].transform.position);
 
@@ -181,7 +179,6 @@ public class UnitController : MonoBehaviour
 
     public void OnDeath()
     {
-        dead = true;
         _animation.CrossFade(deathAnimation);
         Destroy(gameObject, 2f);
     }
