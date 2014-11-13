@@ -713,7 +713,7 @@ MonoBehaviour:
   agroRange: 10
   attackRange: 10
   keepTargetRange: 12
-  attackDamage: 2
+  attackDamage: 1
   attackSpeed: 2
   walkAnimation: archer_moving
   attackAnimation: archer_attacking
