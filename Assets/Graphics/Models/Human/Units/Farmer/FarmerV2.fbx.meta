@@ -125,7 +125,7 @@ ModelImporter:
       name: farmer_moving
       takeName: Take 001
       firstFrame: 5
-      lastFrame: 35
+      lastFrame: 34
       wrapMode: 2
       orientationOffsetY: 0
       level: 0
