@@ -691,7 +691,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70ab77b4919dca4db6af21bd0ff9138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 5
   health: 0
   hitRange: 1
   team: 0
@@ -710,8 +710,8 @@ MonoBehaviour:
   waypointReachedThreshold: 3
   speed: 200
   target: {fileID: 0}
-  agroRange: 10
-  attackRange: 15
+  agroRange: 13
+  attackRange: 13
   keepTargetRange: 12
   attackDamage: 1
   attackSpeed: 2
