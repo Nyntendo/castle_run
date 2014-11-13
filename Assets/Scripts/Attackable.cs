@@ -7,6 +7,7 @@ public class Attackable : MonoBehaviour
     public int health = 0;
     public float hitRange;
     public Team team;
+    public bool dead = false;
 
     public void Start()
     {
@@ -19,6 +20,7 @@ public class Attackable : MonoBehaviour
 
         if (health <= 0)
         {
+            dead = true;
             gameObject.SendMessage("OnDeath");
         }
     }
