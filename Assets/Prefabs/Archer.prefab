@@ -715,6 +715,7 @@ MonoBehaviour:
   keepTargetRange: 12
   attackDamage: 1
   attackSpeed: 2
+  coinValue: 3
   walkAnimation: archer_moving
   attackAnimation: archer_attacking
   deathAnimation: archer_dying

@@ -656,6 +656,7 @@ MonoBehaviour:
   keepTargetRange: 12
   attackDamage: 4
   attackSpeed: 2
+  coinValue: 2
   walkAnimation: soldier_moving
   attackAnimation: soldier_attacking
   deathAnimation: soldier_dying

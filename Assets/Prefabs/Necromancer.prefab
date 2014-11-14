@@ -603,6 +603,7 @@ MonoBehaviour:
   keepTargetRange: 12
   attackDamage: 2
   attackSpeed: 2
+  coinValue: 3
   walkAnimation: necro_moving
   attackAnimation: necro_attacking
   deathAnimation: necro_dying
