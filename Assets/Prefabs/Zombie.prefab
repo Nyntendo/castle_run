@@ -655,6 +655,7 @@ MonoBehaviour:
   keepTargetRange: 12
   attackDamage: 2
   attackSpeed: 2
+  coinValue: 1
   walkAnimation: zombie_moving
   attackAnimation: zombie_attacking
   deathAnimation: zombie_dying

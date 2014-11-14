@@ -13,6 +13,7 @@ public class UnitController : MonoBehaviour
     public float keepTargetRange;
     public int attackDamage;
     public float attackSpeed;
+    public int coinValue;
 
     public string walkAnimation;
     public string attackAnimation;
@@ -29,12 +30,14 @@ public class UnitController : MonoBehaviour
     private float attackTimer;
     private GameObject targetObject;
     private Animation _animation;
+    private GameController gameController;
 
     public void Start()
     {
         seeker = GetComponent<Seeker>();
         controller = GetComponent<CharacterController>();
         attackable = GetComponent<Attackable>();
+        gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
 
         _animation = GetComponentInChildren<Animation>();
         _animation[walkAnimation].wrapMode = WrapMode.Loop;
@@ -179,6 +182,7 @@ public class UnitController : MonoBehaviour
 
     public void OnDeath()
     {
+        gameController.AddCoinsToOtherTeam(attackable.team, coinValue);
         _animation.CrossFade(deathAnimation);
         Destroy(gameObject, 2f);
     }

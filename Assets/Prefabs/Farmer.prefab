@@ -627,6 +627,7 @@ MonoBehaviour:
   keepTargetRange: 12
   attackDamage: 1
   attackSpeed: 1
+  coinValue: 1
   walkAnimation: farmer_moving
   attackAnimation: farmer_attacking
   deathAnimation: farmer_dying
