@@ -120,9 +120,11 @@
      <Compile Include="Assets\Graphics\WaterfallFolder\AnimateTiledTexture.cs" />
      <Compile Include="Assets\Graphics\WaterfallFolder\ScrollingTexture.cs" />
      <Compile Include="Assets\Scripts\Attackable.cs" />
+     <Compile Include="Assets\Scripts\BuildSpotController.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\SpawnerController.cs" />
+     <Compile Include="Assets\Scripts\TeamController.cs" />
      <Compile Include="Assets\Scripts\UnitController.cs" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
      <None Include="Assets\AstarPathfindingProject\Editor\EditorAssets\Materials\Navmesh2.shader" />
