@@ -3,8 +3,8 @@ using System.Collections;
 
 public enum Team
 {
-    Pink,
-    Yellow
+    Player,
+    Enemy
 }
 
 public class SpawnerController : MonoBehaviour
@@ -12,14 +12,14 @@ public class SpawnerController : MonoBehaviour
     public GameObject unitToSpawn;
     public float spawnDelay;
     public Team team;
-    public Vector3 spawnOffset;
+    public Vector3 spawnPoint;
 
     private float spawnTimer;
     private GameObject target;
 
     public void Awake()
     {
-        if (team == Team.Pink)
+        if (team == Team.Player)
         {
             target = GameObject.FindWithTag("YellowBase");
         }
@@ -37,7 +37,7 @@ public class SpawnerController : MonoBehaviour
         {
             var unit = Instantiate(
                     unitToSpawn,
-                    transform.position + spawnOffset * ((team == Team.Pink)?-1:1),
+                    spawnPoint,
                     Quaternion.identity) as GameObject;
 
             if (target != null)

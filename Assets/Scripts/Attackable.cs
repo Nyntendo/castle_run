@@ -16,6 +16,9 @@ public class Attackable : MonoBehaviour
 
     public void Hit(int damage)
     {
+        if (dead)
+            return;
+
         health -= damage;
 
         if (health <= 0)
