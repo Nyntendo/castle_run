@@ -654,7 +654,7 @@ MonoBehaviour:
   agroRange: 10
   attackRange: 1
   keepTargetRange: 12
-  attackDamage: 4
+  attackDamage: 3
   attackSpeed: 2
   coinValue: 2
   walkAnimation: soldier_moving

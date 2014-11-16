@@ -80284,7 +80284,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: 383a139a48fc2b24590c869813471b7f, type: 2}
   - {fileID: 100002, guid: 06df4c2661c89b64b9fbb0ae271cc7b4, type: 2}
   - {fileID: 100002, guid: 53ca8d09cd98c2b42af63904a06744ee, type: 2}
-  buildingCosts: 190000002d00000041000000
+  buildingCosts: 190000002800000028000000
 --- !u!4 &1519335409
 Transform:
   m_ObjectHideFlags: 0
