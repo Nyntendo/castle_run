@@ -53,7 +53,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: -4.37113883e-08}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 108.495209, y: 1.1475991, z: 246.8367}
   m_LocalScale: {x: .233773053, y: .233773053, z: .233773053}
   m_Children:
@@ -128,7 +128,7 @@ MonoBehaviour:
   unitToSpawn: {fileID: 100002, guid: 97fa9aa6ae7ae224d90f1ab3c015389c, type: 2}
   spawnDelay: 12
   team: 0
-  spawnOffset: {x: 0, y: 0, z: 4}
+  spawnPoint: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

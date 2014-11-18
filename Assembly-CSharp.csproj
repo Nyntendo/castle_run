@@ -123,6 +123,7 @@
      <Compile Include="Assets\Scripts\BuildSpotController.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\SimpleEnemyAI.cs" />
      <Compile Include="Assets\Scripts\SpawnerController.cs" />
      <Compile Include="Assets\Scripts\TeamController.cs" />
      <Compile Include="Assets\Scripts\UnitController.cs" />
