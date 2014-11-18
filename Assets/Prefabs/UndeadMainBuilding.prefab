@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   health: 0
-  hitRange: 4
+  hitRange: 3
   team: 1
   dead: 0
 --- !u!1001 &100100000

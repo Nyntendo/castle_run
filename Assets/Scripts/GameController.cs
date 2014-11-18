@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     private BuildSpotController selectedBuildSpot;
     public int playerStartCoins;
     public int enemyStartCoins;
+    public float sellRefund;
 
     public void Start()
     {
@@ -40,14 +41,27 @@ public class GameController : MonoBehaviour
         GUI.Label(new Rect(10, 10, 100, 30), string.Format("{0} coins", playerTeam.coins));
         GUI.Label(new Rect(Screen.width - 110, 10, 100, 30), string.Format("{0} coins", enemyTeam.coins));
 
-        if (selectedBuildSpot != null && selectedBuildSpot.spawner == null)
+        if (selectedBuildSpot != null)
         {
-            for (int i = 0; i < playerTeam.buildings.Length; i++)
+            if (selectedBuildSpot.spawner == null)
             {
-                if (GUI.Button(new Rect(100 + i * 200, Screen.height - 100, 130, 30),
-                    playerTeam.buildings[i].name))
+                for (int i = 0; i < playerTeam.buildings.Length; i++)
                 {
-                    Build(i);
+                    if (GUI.Button(new Rect(100 + i * 200, Screen.height - 100, 130, 30),
+                        playerTeam.buildings[i].name))
+                    {
+                        Build(i);
+                    }
+                }
+            }
+            else
+            {
+                if (GUI.Button(new Rect(100, Screen.height - 100, 130, 30), "Sell"))
+                {
+                    var cost = playerTeam.buildingCosts[selectedBuildSpot.spawnerType];
+                    playerTeam.coins += (int)Mathf.Floor(cost * sellRefund);
+                    Destroy(selectedBuildSpot.spawner.gameObject);
+                    selectedBuildSpot.RemoveSpawner();
                 }
             }
         }
@@ -60,7 +74,7 @@ public class GameController : MonoBehaviour
         {
             playerTeam.coins -= cost;
             var building = Instantiate(playerTeam.buildings[i], selectedBuildSpot.transform.position, Quaternion.identity) as GameObject;
-            selectedBuildSpot.PlaceSpawner(building);
+            selectedBuildSpot.PlaceSpawner(building, i);
             SelectBuildSpot(null);
         }
     }

@@ -631,7 +631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70ab77b4919dca4db6af21bd0ff9138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 12
+  maxHealth: 18
   health: 0
   hitRange: 1
   team: 0
@@ -651,7 +651,7 @@ MonoBehaviour:
   speed: 130
   target: {fileID: 0}
   agroRange: 10
-  attackRange: 1
+  attackRange: 2
   keepTargetRange: 12
   attackDamage: 1
   attackSpeed: 2

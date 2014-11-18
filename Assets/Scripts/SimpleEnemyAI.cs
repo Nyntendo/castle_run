@@ -29,7 +29,7 @@ public class SimpleEnemyAI : MonoBehaviour
         var buildSpot = buildSpots[buildSpotIndex];
         team.coins -= team.buildingCosts[i];
         var building = Instantiate(team.buildings[i], buildSpot.transform.position, Quaternion.identity) as GameObject;
-        buildSpot.PlaceSpawner(building);
+        buildSpot.PlaceSpawner(building, i);
         buildSpotIndex++;
         buildQueueIndex++;
     }

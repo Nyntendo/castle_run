@@ -623,7 +623,7 @@ MonoBehaviour:
   speed: 300
   target: {fileID: 0}
   agroRange: 10
-  attackRange: 1
+  attackRange: 2
   keepTargetRange: 12
   attackDamage: 1
   attackSpeed: 1

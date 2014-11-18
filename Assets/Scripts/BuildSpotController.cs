@@ -6,6 +6,7 @@ public class BuildSpotController : MonoBehaviour
     public GameObject selection;
     public Transform spawnPoint;
     public GameObject spawner;
+    public int spawnerType;
 
     public void Select()
     {
@@ -17,9 +18,16 @@ public class BuildSpotController : MonoBehaviour
         selection.SetActive(false);
     }
 
-    public void PlaceSpawner(GameObject spawner)
+    public void PlaceSpawner(GameObject spawner, int spawnerType)
     {
+        this.spawnerType = spawnerType;
         this.spawner = spawner;
         this.spawner.GetComponent<SpawnerController>().spawnPoint = spawnPoint.position;
+    }
+
+    public void RemoveSpawner()
+    {
+        this.spawnerType = -1;
+        this.spawner = null;
     }
 }
