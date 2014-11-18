@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitToSpawn: {fileID: 100000, guid: c1778101284ca294d9bb0095eee0261d, type: 2}
-  spawnDelay: 15
+  spawnDelay: 25
   team: 0
   spawnPoint: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000

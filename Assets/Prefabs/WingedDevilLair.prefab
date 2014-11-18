@@ -244,9 +244,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitToSpawn: {fileID: 100002, guid: 1cd68eb2af5792646b0c8e61a0f1ea59, type: 2}
-  spawnDelay: 20
+  spawnDelay: 25
   team: 1
-  spawnOffset: {x: 0, y: 0, z: -4}
+  spawnPoint: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

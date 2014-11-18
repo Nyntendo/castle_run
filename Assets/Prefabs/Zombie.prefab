@@ -653,7 +653,7 @@ MonoBehaviour:
   agroRange: 10
   attackRange: 1
   keepTargetRange: 12
-  attackDamage: 2
+  attackDamage: 1
   attackSpeed: 2
   coinValue: 1
   walkAnimation: zombie_moving

@@ -288,6 +288,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -300,9 +301,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   unitToSpawn: {fileID: 100030, guid: e132101a81c385042ba599b4c1ef2223, type: 2}
-  spawnDelay: 30
+  spawnDelay: 40
   team: 1
-  spawnOffset: {x: 0, y: 0, z: -5}
+  spawnPoint: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
