@@ -4,11 +4,17 @@ using System.Collections;
 public class SimpleEnemyAI : MonoBehaviour
 {
     public BuildSpotController[] buildSpots;
-    public TeamController team;
     public int[] buildQueue;
-    
+
+    private TeamController team;
     private int buildQueueIndex = 0;
     private int buildSpotIndex = 0;
+
+    public void Start()
+    {
+        var gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
+        this.team = gameController.enemyTeam;
+    }
 
     public void Update()
     {

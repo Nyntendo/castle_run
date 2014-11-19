@@ -17,8 +17,10 @@ public class SpawnerController : MonoBehaviour
     private float spawnTimer;
     private GameObject target;
 
-    public void Awake()
+    public void SetTeam(Team team)
     {
+        this.team = team;
+
         if (team == Team.Player)
         {
             target = GameObject.FindWithTag("YellowBase");

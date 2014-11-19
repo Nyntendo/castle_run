@@ -7,6 +7,7 @@ public class BuildSpotController : MonoBehaviour
     public Transform spawnPoint;
     public GameObject spawner;
     public int spawnerType;
+    public Team team;
 
     public void Select()
     {
@@ -23,6 +24,7 @@ public class BuildSpotController : MonoBehaviour
         this.spawnerType = spawnerType;
         this.spawner = spawner;
         this.spawner.GetComponent<SpawnerController>().spawnPoint = spawnPoint.position;
+        this.spawner.SendMessage("SetTeam", team);
     }
 
     public void RemoveSpawner()

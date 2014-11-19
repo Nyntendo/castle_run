@@ -183,6 +183,8 @@ MonoBehaviour:
   selection: {fileID: 100002}
   spawnPoint: {fileID: 400004}
   spawner: {fileID: 0}
+  spawnerType: 0
+  team: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
