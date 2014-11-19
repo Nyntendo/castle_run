@@ -5,8 +5,10 @@ TagManager:
   tags:
   - PlayerBase
   - EnemyBase
+  - Unit
   - 
   - PinkBase
+  - YellowBase
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

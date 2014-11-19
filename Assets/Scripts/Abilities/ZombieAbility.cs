@@ -18,7 +18,7 @@ public class ZombieAbility : MonoBehaviour
 
     public void OnAttack(GameObject target)
     {
-        if (Random.value < infectChance)
+        if (target.tag == "Unit" && Random.value < infectChance)
         {
             StartCoroutine(Infect(target));
         }

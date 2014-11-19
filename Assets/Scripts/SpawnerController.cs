@@ -23,11 +23,11 @@ public class SpawnerController : MonoBehaviour
 
         if (team == Team.Player)
         {
-            target = GameObject.FindWithTag("YellowBase");
+            target = GameObject.FindWithTag("EnemyBase");
         }
         else
         {
-            target = GameObject.FindWithTag("PinkBase");
+            target = GameObject.FindWithTag("PlayerBase");
         }
     }
 
@@ -45,7 +45,7 @@ public class SpawnerController : MonoBehaviour
             if (target != null)
                 unit.SendMessage("SetTarget", target.transform);
 
-            unit.SendMessage("SetTeam", (int)team);
+            unit.SendMessage("SetTeam", team);
 
             spawnTimer = 0f;
         }

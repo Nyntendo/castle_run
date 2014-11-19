@@ -28,8 +28,8 @@ public class Attackable : MonoBehaviour
         }
     }
 
-    public void SetTeam(int team)
+    public void SetTeam(Team team)
     {
-        this.team = (Team)team;
+        this.team = team;
     }
 }
