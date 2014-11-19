@@ -672,7 +672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d11fe507da3c1c542b36fc4bd3fed78b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  infectChance: .5
+  infectChance: .0500000007
   infectDelay: 1
   zombiePrefab: {fileID: 100002}
 --- !u!137 &13700000
