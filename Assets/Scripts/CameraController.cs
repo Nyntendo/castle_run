@@ -27,12 +27,12 @@ public class CameraController : MonoBehaviour
         {
             var delta = Input.GetTouch(0).deltaPosition;
 
-            if (delta.x < 0 && transform.position.x < rightStop)
+            if (delta.x < 0)
             {
                 swipeScrollVelocity = Vector3.left * swipeScrollSpeed * delta.x;
             }
 
-            if (delta.x > 0 && transform.position.x > leftStop)
+            if (delta.x > 0)
             {
                 swipeScrollVelocity = Vector3.left * swipeScrollSpeed * delta.x;
             }
@@ -40,7 +40,11 @@ public class CameraController : MonoBehaviour
 
         if (Vector3.Magnitude(swipeScrollVelocity) > 0f)
         {
-            transform.position += swipeScrollVelocity;
+            if (swipeScrollVelocity.x > 0f &&transform.position.x < rightStop)
+                transform.position += swipeScrollVelocity;
+
+            if (swipeScrollVelocity.x < 0f && transform.position.x > leftStop)
+                transform.position += swipeScrollVelocity;
 
             swipeScrollVelocity *= swipeScrollFriction;
 

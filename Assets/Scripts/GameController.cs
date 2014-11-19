@@ -16,6 +16,7 @@ public class GameController : MonoBehaviour
 
     public void Start()
     {
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
         playerTeam.coins = playerStartCoins;
         enemyTeam.coins = enemyStartCoins;
     }
@@ -34,6 +35,14 @@ public class GameController : MonoBehaviour
             enemyTeam.coins += coins;
         else
             playerTeam.coins += coins;
+    }
+
+    public TeamController GetTeamController(Team team)
+    {
+        if (team == Team.Player)
+            return playerTeam;
+        else
+            return enemyTeam;
     }
 
     public void OnGUI()
@@ -95,7 +104,7 @@ public class GameController : MonoBehaviour
             }
         }
 
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && GUIUtility.hotControl == 0)
         {
             var ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
             RaycastHit hit;
