@@ -7,6 +7,10 @@ public class CameraController : MonoBehaviour
     public float rightStop;
     public float scrollSpeed;
     public float scrollZoneWidth;
+    public float swipeScrollSpeed;
+    public float swipeScrollFriction;
+
+    private Vector3 swipeScrollVelocity = Vector3.zero;
 
 
     void Update () {
@@ -17,6 +21,33 @@ public class CameraController : MonoBehaviour
         if (Input.mousePosition.x > (Screen.width - scrollZoneWidth) && transform.position.x < rightStop)
         {
             transform.position += Vector3.right * scrollSpeed * Time.deltaTime;
+        }
+
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+        {
+            var delta = Input.GetTouch(0).deltaPosition;
+
+            if (delta.x < 0 && transform.position.x < rightStop)
+            {
+                swipeScrollVelocity = Vector3.left * swipeScrollSpeed * delta.x;
+            }
+
+            if (delta.x > 0 && transform.position.x > leftStop)
+            {
+                swipeScrollVelocity = Vector3.left * swipeScrollSpeed * delta.x;
+            }
+        }
+
+        if (Vector3.Magnitude(swipeScrollVelocity) > 0f)
+        {
+            transform.position += swipeScrollVelocity;
+
+            swipeScrollVelocity *= swipeScrollFriction;
+
+            if (Vector3.Magnitude(swipeScrollVelocity) < 0.1f)
+            {
+                swipeScrollVelocity = Vector3.zero;
+            }
         }
     }
 }

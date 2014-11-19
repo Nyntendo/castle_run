@@ -177,6 +177,7 @@ public class UnitController : MonoBehaviour
         _animation.CrossFade(attackAnimation);
         _animation.CrossFadeQueued(walkAnimation);
         target.SendMessage("Hit", attackDamage);
+        gameObject.SendMessage("OnAttack", target, SendMessageOptions.DontRequireReceiver);
         attackTimer = attackSpeed;
     }
 
@@ -184,6 +185,7 @@ public class UnitController : MonoBehaviour
     {
         gameController.AddCoinsToOtherTeam(attackable.team, coinValue);
         _animation.CrossFade(deathAnimation);
-        Destroy(gameObject, 2f);
+        controller.enabled = false;
+        Destroy(gameObject, 10f);
     }
 }

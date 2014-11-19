@@ -94,6 +94,20 @@ public class GameController : MonoBehaviour
                 SelectBuildSpot(null);
             }
         }
+
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+        {
+            var ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+            RaycastHit hit;
+            if (Physics.Raycast(ray, out hit, 100, buildSpotLayerMask))
+            {
+                SelectBuildSpot(hit.collider.GetComponent<BuildSpotController>());
+            }
+            else
+            {
+                SelectBuildSpot(null);
+            }
+        }
     }
 
     private void SelectBuildSpot(BuildSpotController buildSpot)
