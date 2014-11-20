@@ -119,6 +119,7 @@
      <Compile Include="Assets\AstarPathfindingProject\changelog.cs" />
      <Compile Include="Assets\Graphics\WaterfallFolder\AnimateTiledTexture.cs" />
      <Compile Include="Assets\Graphics\WaterfallFolder\ScrollingTexture.cs" />
+     <Compile Include="Assets\Scripts\Abilities\FarmAbility.cs" />
      <Compile Include="Assets\Scripts\Abilities\ZombieAbility.cs" />
      <Compile Include="Assets\Scripts\Attackable.cs" />
      <Compile Include="Assets\Scripts\BuildSpotController.cs" />
