@@ -120,11 +120,13 @@
      <Compile Include="Assets\Graphics\WaterfallFolder\AnimateTiledTexture.cs" />
      <Compile Include="Assets\Graphics\WaterfallFolder\ScrollingTexture.cs" />
      <Compile Include="Assets\Scripts\Abilities\FarmAbility.cs" />
+     <Compile Include="Assets\Scripts\Abilities\NecromancerAbility.cs" />
      <Compile Include="Assets\Scripts\Abilities\ZombieAbility.cs" />
      <Compile Include="Assets\Scripts\Attackable.cs" />
      <Compile Include="Assets\Scripts\BuildSpotController.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\RaiseDeadEffect.cs" />
      <Compile Include="Assets\Scripts\SimpleEnemyAI.cs" />
      <Compile Include="Assets\Scripts\SpawnerController.cs" />
      <Compile Include="Assets\Scripts\TeamController.cs" />
