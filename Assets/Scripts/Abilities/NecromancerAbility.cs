@@ -45,14 +45,10 @@ public class NecromancerAbility : MonoBehaviour
             int i = 0;
             while (i < colliders.Length)
             {
-                if (colliders[i].tag == "Unit")
+                if (colliders[i].tag == "Corpse")
                 {
-                    var attackable = colliders[i].GetComponent<Attackable>();
-                    if (attackable.dead)
-                    {
-                        target = colliders[i].transform;
-                        break;
-                    }
+                    target = colliders[i].transform;
+                    break;
                 }
                 i++;
             }
@@ -74,14 +70,10 @@ public class NecromancerAbility : MonoBehaviour
         int i = 0;
         while (i < colliders.Length)
         {
-            if (colliders[i].tag == "Unit")
+            if (colliders[i].tag == "Corpse")
             {
-                var attackable = colliders[i].GetComponent<Attackable>();
-                if (attackable.dead)
-                {
-                    SpawnSkeletonAt(colliders[i].transform.position);
-                    Destroy(colliders[i].gameObject);
-                }
+                SpawnSkeletonAt(colliders[i].transform.position);
+                Destroy(colliders[i].gameObject);
             }
             i++;
         }

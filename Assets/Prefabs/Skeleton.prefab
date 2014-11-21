@@ -271,7 +271,6 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   - 143: {fileID: 14300000}
-  - 136: {fileID: 13600000}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Unit
@@ -605,7 +604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70ab77b4919dca4db6af21bd0ff9138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 6
+  maxHealth: 3
   health: 0
   hitRange: 1
   team: 0
@@ -624,7 +623,7 @@ MonoBehaviour:
   waypointReachedThreshold: 3
   speed: 130
   target: {fileID: 0}
-  corpseTime: 30
+  leavesCorpse: 0
   agroRange: 10
   attackRange: 2
   keepTargetRange: 12
@@ -635,19 +634,6 @@ MonoBehaviour:
   attackAnimation: skeleton_attacking
   deathAnimation: skeleton_dying
   attackParticleSystem: {fileID: 0}
---- !u!136 &13600000
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100034}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: .699999988
-  m_Height: 4
-  m_Direction: 1
-  m_Center: {x: 0, y: 2, z: 0}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

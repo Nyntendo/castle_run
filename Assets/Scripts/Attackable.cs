@@ -31,5 +31,6 @@ public class Attackable : MonoBehaviour
     public void SetTeam(Team team)
     {
         this.team = team;
+        GameObject.FindWithTag("GameController").SendMessage("IncrementUnits", team);
     }
 }

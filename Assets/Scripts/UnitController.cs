@@ -7,7 +7,7 @@ public class UnitController : MonoBehaviour
     public float waypointReachedThreshold;
     public float speed;
     public Transform target;
-    public float corpseTime = 30f;
+    public bool leavesCorpse = true;
 
     public float agroRange;
     public float attackRange;
@@ -45,7 +45,6 @@ public class UnitController : MonoBehaviour
         _animation[attackAnimation].wrapMode = WrapMode.Once;
         _animation[deathAnimation].wrapMode = WrapMode.ClampForever;
 
-        gameController.IncrementUnits(attackable.team);
     }
 
     public void Update()
@@ -186,10 +185,17 @@ public class UnitController : MonoBehaviour
 
     public void OnDeath()
     {
-        gameController.DecrementUnits(attackable.team);
+        if (leavesCorpse)
+            gameController.PutCorpseAt(transform.position);
+
         gameController.AddCoinsToOtherTeam(attackable.team, coinValue);
         _animation.CrossFade(deathAnimation);
         controller.enabled = false;
-        Destroy(gameObject, corpseTime);
+        Destroy(gameObject, _animation[deathAnimation].length);
+    }
+
+    public void OnDestroy()
+    {
+        gameController.DecrementUnits(attackable.team);
     }
 }

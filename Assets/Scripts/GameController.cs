@@ -16,12 +16,20 @@ public class GameController : MonoBehaviour
     public int enemyStartCoins;
     public float sellRefund;
     public int unitCap;
+    public GameObject corpsePrefab;
+    public float corpseDespawnTime;
 
     public void Start()
     {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         playerTeam.coins = playerStartCoins;
         enemyTeam.coins = enemyStartCoins;
+    }
+
+    public void PutCorpseAt(Vector3 position)
+    {
+        var corpse = Instantiate(corpsePrefab, position, Quaternion.identity) as GameObject;
+        Destroy(corpse, corpseDespawnTime);
     }
 
     public void IncrementUnits(Team team)
