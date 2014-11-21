@@ -8,6 +8,7 @@ public class TeamController : MonoBehaviour
     public int[] buildingCosts;
     public int income;
     public float incomeDelay;
+    public int currentNumberOfUnits = 0;
 
     private float incomeTimer = 0f;
 
