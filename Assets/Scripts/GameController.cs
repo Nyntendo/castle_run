@@ -5,6 +5,8 @@ using System.Collections;
 public class GameController : MonoBehaviour
 {
     public LayerMask buildSpotLayerMask;
+    public GUISkin guiSkin;
+    public Texture2D coinTexture;
 
     public TeamController playerTeam;
     public TeamController enemyTeam;
@@ -72,8 +74,9 @@ public class GameController : MonoBehaviour
 
     public void OnGUI()
     {
-        GUI.Label(new Rect(10, 10, 100, 30), string.Format("{0} coins", playerTeam.coins));
-        GUI.Label(new Rect(Screen.width - 110, 10, 100, 30), string.Format("{0} coins", enemyTeam.coins));
+        GUI.skin = guiSkin;
+        GUI.Label(new Rect(10, 10, 150, 50),
+                new GUIContent(string.Format(" x {0}", playerTeam.coins), coinTexture));
 
         if (selectedBuildSpot != null)
         {
@@ -81,7 +84,9 @@ public class GameController : MonoBehaviour
             {
                 for (int i = 0; i < playerTeam.buildings.Length; i++)
                 {
-                    if (GUI.Button(new Rect(100 + i * 200, Screen.height - 100, 130, 30),
+                    GUI.Label(new Rect(100 + i * 200, Screen.height - 50, 150, 50),
+                            new GUIContent(string.Format(" x {0}", playerTeam.buildingCosts[i]), coinTexture));
+                    if (GUI.Button(new Rect(100 + i * 200, Screen.height - 200, 150, 150),
                         playerTeam.buildings[i].name))
                     {
                         Build(i);
