@@ -44,6 +44,8 @@ public class UnitController : MonoBehaviour
         _animation[walkAnimation].wrapMode = WrapMode.Loop;
         _animation[attackAnimation].wrapMode = WrapMode.Once;
         _animation[deathAnimation].wrapMode = WrapMode.ClampForever;
+
+        gameController.IncrementUnits(attackable.team);
     }
 
     public void Update()
@@ -184,6 +186,7 @@ public class UnitController : MonoBehaviour
 
     public void OnDeath()
     {
+        gameController.DecrementUnits(attackable.team);
         gameController.AddCoinsToOtherTeam(attackable.team, coinValue);
         _animation.CrossFade(deathAnimation);
         controller.enabled = false;

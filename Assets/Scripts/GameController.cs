@@ -13,12 +13,37 @@ public class GameController : MonoBehaviour
     public int playerStartCoins;
     public int enemyStartCoins;
     public float sellRefund;
+    public int unitCap;
 
     public void Start()
     {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         playerTeam.coins = playerStartCoins;
         enemyTeam.coins = enemyStartCoins;
+    }
+
+    public void IncrementUnits(Team team)
+    {
+        if (team == Team.Enemy)
+            enemyTeam.currentNumberOfUnits++;
+        else
+            playerTeam.currentNumberOfUnits++;
+    }
+
+    public void DecrementUnits(Team team)
+    {
+        if (team == Team.Enemy)
+            enemyTeam.currentNumberOfUnits--;
+        else
+            playerTeam.currentNumberOfUnits--;
+    }
+
+    public bool CanSpawn(Team team)
+    {
+        if (team == Team.Enemy)
+            return enemyTeam.currentNumberOfUnits < unitCap;
+        else
+            return playerTeam.currentNumberOfUnits < unitCap;
     }
 
     public void AddCoins(Team team, int coins)

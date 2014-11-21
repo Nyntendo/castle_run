@@ -623,7 +623,7 @@ MonoBehaviour:
   waypointReachedThreshold: 3
   speed: 300
   target: {fileID: 0}
-  corpseTime: 30
+  corpseTime: 20
   agroRange: 10
   attackRange: 2
   keepTargetRange: 12

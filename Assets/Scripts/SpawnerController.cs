@@ -16,6 +16,12 @@ public class SpawnerController : MonoBehaviour
 
     private float spawnTimer;
     private GameObject target;
+    private GameController gameController;
+
+    public void Start()
+    {
+        gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
+    }
 
     public void SetTeam(Team team)
     {
@@ -35,7 +41,7 @@ public class SpawnerController : MonoBehaviour
     {
         spawnTimer += Time.deltaTime;
 
-        if (spawnTimer >= spawnDelay)
+        if (spawnTimer >= spawnDelay && gameController.CanSpawn(team))
         {
             var unit = Instantiate(
                     unitToSpawn,
