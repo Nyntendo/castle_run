@@ -622,7 +622,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57611ca96ceead842a57d6a3034b0dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skeletonPrefab: {fileID: 100002, guid: da9920e3cc168224ca1324e01e8f38d3, type: 2}
+  skeletonPrefab: {fileID: 100034, guid: ed54bf01cd69b074f90abf00c597f98b, type: 2}
   cooldown: 60
   range: 15
   radius: 5
