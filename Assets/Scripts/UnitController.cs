@@ -7,6 +7,7 @@ public class UnitController : MonoBehaviour
     public float waypointReachedThreshold;
     public float speed;
     public Transform target;
+    public float corpseTime = 30f;
 
     public float agroRange;
     public float attackRange;
@@ -186,6 +187,6 @@ public class UnitController : MonoBehaviour
         gameController.AddCoinsToOtherTeam(attackable.team, coinValue);
         _animation.CrossFade(deathAnimation);
         controller.enabled = false;
-        Destroy(gameObject, 10f);
+        Destroy(gameObject, corpseTime);
     }
 }
