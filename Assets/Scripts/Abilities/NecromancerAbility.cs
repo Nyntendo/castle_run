@@ -83,7 +83,6 @@ public class NecromancerAbility : MonoBehaviour
     private void SpawnSkeletonAt(Vector3 position)
     {
         var skeleton = Instantiate(skeletonPrefab, position, Quaternion.identity) as GameObject;
-        skeleton.SendMessage("SetTarget", unitController.target);
         skeleton.SendMessage("SetTeam", attackable.team);
     }
 }

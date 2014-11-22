@@ -54,6 +54,9 @@ public class UnitController : MonoBehaviour
         if (attackable.dead)
             return;
 
+        if (target == null)
+            target = gameController.GetTarget(attackable.team);
+
         if (path == null && target != null && !calculatingPath && targetObject == null)
         {
             calculatingPath = true;
@@ -133,11 +136,6 @@ public class UnitController : MonoBehaviour
         this.currentWaypoint = 0;
         this.path = path;
         this.calculatingPath = false;
-    }
-
-    public void SetTarget(Transform target)
-    {
-        this.target = target;
     }
 
     private void LookForTrouble()
@@ -223,17 +221,5 @@ public class UnitController : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
         stunned = false;
-    }
-
-    public void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag != "Unit")
-            return;
-        Debug.Log("Collision!!!");
-        var attackable = collision.gameObject.GetComponent<Attackable>();
-        if ((this.attackable.unitType & attackable.unitType) == 0)
-        {
-            Physics.IgnoreCollision(collision.collider, controller);
-        }
     }
 }

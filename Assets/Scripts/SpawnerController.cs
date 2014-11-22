@@ -15,7 +15,6 @@ public class SpawnerController : MonoBehaviour
     public Vector3 spawnPoint;
 
     private float spawnTimer;
-    private GameObject target;
     private GameController gameController;
 
     public void Start()
@@ -26,15 +25,6 @@ public class SpawnerController : MonoBehaviour
     public void SetTeam(Team team)
     {
         this.team = team;
-
-        if (team == Team.Player)
-        {
-            target = GameObject.FindWithTag("EnemyBase");
-        }
-        else
-        {
-            target = GameObject.FindWithTag("PlayerBase");
-        }
     }
 
     public void Update()
@@ -47,9 +37,6 @@ public class SpawnerController : MonoBehaviour
                     unitToSpawn,
                     spawnPoint,
                     Quaternion.identity) as GameObject;
-
-            if (target != null)
-                unit.SendMessage("SetTarget", target.transform);
 
             unit.SendMessage("SetTeam", team);
 
