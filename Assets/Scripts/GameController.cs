@@ -106,7 +106,7 @@ public class GameController : MonoBehaviour
             }
             else
             {
-                if (GUI.Button(new Rect(100, Screen.height - 100, 130, 30), "Sell"))
+                if (GUI.Button(new Rect(100, Screen.height - 200, 150, 150), "Sell"))
                 {
                     var cost = playerTeam.buildingCosts[selectedBuildSpot.spawnerType];
                     playerTeam.coins += (int)Mathf.Floor(cost * sellRefund);
