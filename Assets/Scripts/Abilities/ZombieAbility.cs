@@ -35,7 +35,6 @@ public class ZombieAbility : MonoBehaviour
         var rot = target.transform.rotation;
         Destroy(target);
         var zombie = Instantiate(zombiePrefab, pos, rot) as GameObject;
-        zombie.SendMessage("SetTarget", unitController.target);
         zombie.SendMessage("SetTeam", attackable.team);
     }
 }

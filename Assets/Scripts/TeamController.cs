@@ -4,6 +4,7 @@ using System.Collections;
 public class TeamController : MonoBehaviour
 {
     public int coins = 0;
+    public GameObject mainBuilding;
     public GameObject[] buildings;
     public int[] buildingCosts;
     public int income;

@@ -11,6 +11,9 @@ public class GameController : MonoBehaviour
     public TeamController playerTeam;
     public TeamController enemyTeam;
 
+    public Transform playerMainBuildingSpot;
+    public Transform enemyMainBuildingSpot;
+
     private BuildSpotController selectedBuildSpot;
     public int playerStartCoins;
     public int enemyStartCoins;
@@ -19,11 +22,35 @@ public class GameController : MonoBehaviour
     public GameObject corpsePrefab;
     public float corpseDespawnTime;
 
+    private Attackable playerMainBuildingAttackable;
+    private Attackable enemyMainBuildingAttackable;
+
     public void Start()
     {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
         playerTeam.coins = playerStartCoins;
         enemyTeam.coins = enemyStartCoins;
+
+        var playerMainBuilding = Instantiate(
+                playerTeam.mainBuilding,
+                playerMainBuildingSpot.position,
+                playerMainBuildingSpot.rotation) as GameObject;
+        playerMainBuilding.SendMessage("SetTeam", Team.Player);
+        playerMainBuildingAttackable = playerMainBuilding.GetComponent<Attackable>();
+
+        var enemyMainBuilding = Instantiate(enemyTeam.mainBuilding,
+                enemyMainBuildingSpot.position,
+                enemyMainBuildingSpot.rotation) as GameObject;
+        enemyMainBuilding.SendMessage("SetTeam", Team.Enemy);
+        enemyMainBuildingAttackable = enemyMainBuilding.GetComponent<Attackable>();
+    }
+
+    public Transform GetTarget(Team team)
+    {
+        if (team == Team.Enemy)
+            return playerMainBuildingSpot;
+        else
+            return enemyMainBuildingSpot;
     }
 
     public void PutCorpseAt(Vector3 position)
@@ -88,6 +115,13 @@ public class GameController : MonoBehaviour
 
         GUI.Label(new Rect(160, 10, 150, 50),
                 string.Format("{0}/{1} units", playerTeam.currentNumberOfUnits, unitCap));
+
+        var playerMainBuildingHealth = (int)Mathf.Floor(
+                (float)playerMainBuildingAttackable.health / (float)playerMainBuildingAttackable.maxHealth * 100f);
+        var enemyMainBuildingHealth = (int)Mathf.Floor(
+                (float)enemyMainBuildingAttackable.health / (float)enemyMainBuildingAttackable.maxHealth * 100f);
+        GUI.Label(new Rect(Screen.width / 2 - 100, 10, 200, 50),
+                string.Format("{0}% - {1}%", playerMainBuildingHealth, enemyMainBuildingHealth));
 
         if (selectedBuildSpot != null)
         {
