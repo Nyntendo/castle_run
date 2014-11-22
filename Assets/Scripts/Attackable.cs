@@ -1,6 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum UnitType
+{
+    Ground = 0x01,
+    Flying = 0x02,
+    Both = 0x03
+}
+
 public class Attackable : MonoBehaviour
 {
     public int maxHealth;
@@ -8,6 +15,8 @@ public class Attackable : MonoBehaviour
     public float hitRange;
     public Team team;
     public bool dead = false;
+    public UnitType unitType;
+    public UnitType canAttack;
 
     public void Start()
     {

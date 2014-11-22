@@ -2,6 +2,7 @@
 using System.Collections;
 using Pathfinding;
 
+
 public class UnitController : MonoBehaviour
 {
     public float waypointReachedThreshold;
@@ -129,7 +130,6 @@ public class UnitController : MonoBehaviour
 
     public void OnPathComplete(Path path)
     {
-        Debug.Log("Path complete");
         this.currentWaypoint = 0;
         this.path = path;
         this.calculatingPath = false;
@@ -152,7 +152,10 @@ public class UnitController : MonoBehaviour
         {
             var attackable = colliders[i].GetComponent<Attackable>();
 
-            if (attackable != null && !attackable.dead && attackable.team != this.attackable.team)
+            if (attackable != null &&
+                !attackable.dead &&
+                attackable.team != this.attackable.team &&
+                (this.attackable.canAttack & attackable.unitType) > 0)
             {
                 var distance = Vector3.Distance(transform.position, colliders[i].transform.position);
 
@@ -220,5 +223,17 @@ public class UnitController : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
         stunned = false;
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag != "Unit")
+            return;
+        Debug.Log("Collision!!!");
+        var attackable = collision.gameObject.GetComponent<Attackable>();
+        if ((this.attackable.unitType & attackable.unitType) == 0)
+        {
+            Physics.IgnoreCollision(collision.collider, controller);
+        }
     }
 }

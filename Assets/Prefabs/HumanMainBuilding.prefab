@@ -157,6 +157,8 @@ MonoBehaviour:
   hitRange: 3
   team: 0
   dead: 0
+  unitType: 3
+  canAttack: 3
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
