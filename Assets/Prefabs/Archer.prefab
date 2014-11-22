@@ -711,9 +711,9 @@ MonoBehaviour:
   waypointReachedThreshold: 3
   speed: 200
   target: {fileID: 0}
-  corpseTime: 20
+  leavesCorpse: 1
   agroRange: 13
-  attackRange: 13
+  attackRange: 18
   keepTargetRange: 12
   attackDamage: 1
   attackSpeed: 2

@@ -32,6 +32,7 @@ public class UnitController : MonoBehaviour
     private GameObject targetObject;
     private Animation _animation;
     private GameController gameController;
+    private bool stunned = false;
 
     public void Start()
     {
@@ -61,7 +62,7 @@ public class UnitController : MonoBehaviour
 
     public void FixedUpdate()
     {
-        if (attackable.dead)
+        if (attackable.dead || stunned)
             return;
 
         if (attackTimer > 0f)
@@ -197,5 +198,27 @@ public class UnitController : MonoBehaviour
     public void OnDestroy()
     {
         gameController.DecrementUnits(attackable.team);
+    }
+
+    public GameObject GetTargetObject()
+    {
+        return targetObject;
+    }
+
+    public void SetWalkAnimationSpeed(float speed)
+    {
+        _animation[walkAnimation].speed = speed;
+    }
+
+    public void Stun(float duration)
+    {
+        stunned = true;
+        StartCoroutine(UnStun(duration));
+    }
+
+    private IEnumerator UnStun(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        stunned = false;
     }
 }

@@ -600,7 +600,7 @@ MonoBehaviour:
   waypointReachedThreshold: 3
   speed: 130
   target: {fileID: 0}
-  corpseTime: 20
+  leavesCorpse: 1
   agroRange: 10
   attackRange: 10
   keepTargetRange: 12
@@ -989,7 +989,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     type: 4
-    radius: 1
+    radius: .100000001
     angle: 1
     length: 5
     boxX: 1
