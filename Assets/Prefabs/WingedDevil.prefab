@@ -711,11 +711,11 @@ MonoBehaviour:
   waypointReachedThreshold: 3
   speed: 200
   target: {fileID: 0}
-  corpseTime: 20
+  leavesCorpse: 1
   agroRange: 10
   attackRange: 6
   keepTargetRange: 12
-  attackDamage: 1
+  attackDamage: 2
   attackSpeed: 2
   coinValue: 2
   walkAnimation: wingedDevil_moving
