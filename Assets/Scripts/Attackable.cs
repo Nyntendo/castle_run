@@ -21,6 +21,7 @@ public class Attackable : MonoBehaviour
     public void Start()
     {
         health = maxHealth;
+        dead = false;
     }
 
     public void Hit(int damage)
