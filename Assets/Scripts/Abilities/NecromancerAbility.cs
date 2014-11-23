@@ -16,9 +16,11 @@ public class NecromancerAbility : MonoBehaviour
     private Animation _animation;
     private UnitController unitController;
     private Attackable attackable;
+    private GameController gameController;
 
     public void Start()
     {
+        gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
         unitController = GetComponent<UnitController>();
         attackable = GetComponent<Attackable>();
         _animation = GetComponentInChildren<Animation>();
@@ -27,6 +29,9 @@ public class NecromancerAbility : MonoBehaviour
 
     public void Update()
     {
+        if (gameController.gameState != GameState.Playing)
+            return;
+
         if (cooldownTimer > 0f)
         {
             cooldownTimer -= Time.deltaTime;

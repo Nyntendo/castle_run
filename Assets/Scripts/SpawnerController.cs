@@ -29,6 +29,9 @@ public class SpawnerController : MonoBehaviour
 
     public void Update()
     {
+        if (gameController.gameState != GameState.Playing)
+            return;
+
         spawnTimer += Time.deltaTime;
 
         if (spawnTimer >= spawnDelay && gameController.CanSpawn(team))

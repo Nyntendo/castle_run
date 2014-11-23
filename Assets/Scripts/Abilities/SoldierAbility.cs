@@ -9,14 +9,19 @@ public class SoldierAbility : MonoBehaviour
     private float cooldownTimer;
     private bool isBoosted = false;
     private UnitController unitController;
+    private GameController gameController;
 
     public void Start()
     {
+        gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
         unitController = GetComponent<UnitController>();
     }
 
     public void Update()
     {
+        if (gameController.gameState != GameState.Playing)
+            return;
+
         if (cooldownTimer > 0f)
         {
             cooldownTimer -= Time.deltaTime;

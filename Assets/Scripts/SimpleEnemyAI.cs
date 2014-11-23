@@ -9,15 +9,19 @@ public class SimpleEnemyAI : MonoBehaviour
     private TeamController team;
     private int buildQueueIndex = 0;
     private int buildSpotIndex = 0;
+    private GameController gameController;
 
     public void Start()
     {
-        var gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
+        gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
         this.team = gameController.enemyTeam;
     }
 
     public void Update()
     {
+        if (gameController.gameState != GameState.Playing)
+            return;
+
         if (buildSpotIndex >= buildSpots.Length)
         {
             return;
