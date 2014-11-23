@@ -11,9 +11,18 @@ public class CameraController : MonoBehaviour
     public float swipeScrollFriction;
 
     private Vector3 swipeScrollVelocity = Vector3.zero;
+    private GameController gameController;
+
+    public void Start()
+    {
+        gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
+    }
 
 
     void Update () {
+        if (gameController.gameState != GameState.Playing)
+            return;
+
         if (Input.mousePosition.x < scrollZoneWidth && transform.position.x > leftStop)
         {
             transform.position += Vector3.left * scrollSpeed * Time.deltaTime;

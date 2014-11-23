@@ -51,6 +51,9 @@ public class UnitController : MonoBehaviour
 
     public void Update()
     {
+        if (gameController.gameState != GameState.Playing)
+            return;
+
         if (attackable.dead)
             return;
 
@@ -66,6 +69,9 @@ public class UnitController : MonoBehaviour
 
     public void FixedUpdate()
     {
+        if (gameController.gameState != GameState.Playing)
+            return;
+
         if (attackable.dead || stunned)
             return;
 

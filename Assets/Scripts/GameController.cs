@@ -1,9 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum GameState
+{
+    Paused,
+    Playing,
+    Finished
+}
 
 public class GameController : MonoBehaviour
 {
+    public GameState gameState = GameState.Playing;
     public LayerMask buildSpotLayerMask;
     public GUISkin guiSkin;
     public Texture2D coinTexture;
@@ -24,6 +31,8 @@ public class GameController : MonoBehaviour
 
     private Attackable playerMainBuildingAttackable;
     private Attackable enemyMainBuildingAttackable;
+
+    private Team loosingTeam;
 
     public void Start()
     {
@@ -123,7 +132,13 @@ public class GameController : MonoBehaviour
         GUI.Label(new Rect(Screen.width / 2 - 100, 10, 200, 50),
                 string.Format("{0}% - {1}%", playerMainBuildingHealth, enemyMainBuildingHealth));
 
-        if (selectedBuildSpot != null)
+        if (gameState == GameState.Finished)
+        {
+            GUI.Label(new Rect(Screen.width / 2 - 100, Screen.height / 2 - 25, 200,  50), 
+                    (loosingTeam == Team.Enemy)?"You win!":"You loose!");
+        }
+
+        if (selectedBuildSpot != null && gameState == GameState.Playing)
         {
             if (selectedBuildSpot.spawner == null)
             {
@@ -149,6 +164,32 @@ public class GameController : MonoBehaviour
                 }
             }
         }
+
+        if (GUI.Button(new Rect(Screen.width - 160, 10, 150, 50), "Pause"))
+        {
+            if (gameState == GameState.Playing)
+                Pause();
+            else
+                UnPause();
+        }
+    }
+
+    public void MainBuildingDestroyed(Team team)
+    {
+        loosingTeam = team;
+        gameState = GameState.Finished;
+    }
+
+    public void Pause()
+    {
+        gameState = GameState.Paused;
+        Time.timeScale = 0;
+    }
+
+    public void UnPause()
+    {
+        gameState = GameState.Playing;
+        Time.timeScale = 1;
     }
 
     private void Build(int i)
@@ -165,6 +206,9 @@ public class GameController : MonoBehaviour
 
     public void Update()
     {
+        if (gameState != GameState.Playing)
+            return;
+
         if (Input.GetMouseButtonDown(0) && GUIUtility.hotControl == 0)
         {
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);

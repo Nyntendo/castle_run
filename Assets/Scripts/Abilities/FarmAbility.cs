@@ -18,6 +18,9 @@ public class FarmAbility : MonoBehaviour
 
     public void Update()
     {
+        if (gameController.gameState != GameState.Playing)
+            return;
+
         incomeTimer += Time.deltaTime;
 
         if (incomeTimer >= incomeDelay)

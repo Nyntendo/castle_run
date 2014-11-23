@@ -12,9 +12,18 @@ public class TeamController : MonoBehaviour
     public int currentNumberOfUnits = 0;
 
     private float incomeTimer = 0f;
+    private GameController gameController;
+
+    public void Start()
+    {
+        gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
+    }
 
     public void Update()
     {
+        if (gameController.gameState != GameState.Playing)
+            return;
+
         incomeTimer += Time.deltaTime;
 
         if (incomeTimer >= incomeDelay)
