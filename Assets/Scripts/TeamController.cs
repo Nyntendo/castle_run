@@ -7,6 +7,7 @@ public class TeamController : MonoBehaviour
     public GameObject mainBuilding;
     public GameObject[] buildings;
     public int[] buildingCosts;
+    public Texture2D[] buildingImages;
     public int income;
     public float incomeDelay;
     public int currentNumberOfUnits = 0;

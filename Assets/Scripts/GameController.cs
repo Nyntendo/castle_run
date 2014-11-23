@@ -148,7 +148,7 @@ public class GameController : MonoBehaviour
                     GUI.Label(new Rect(120 + i * 200, Screen.height - 50, 150, 50),
                             new GUIContent(string.Format(" x {0}", playerTeam.buildingCosts[i]), coinTexture));
                     if (GUI.Button(new Rect(100 + i * 200, Screen.height - 200, 150, 150),
-                        playerTeam.buildings[i].name))
+                        new GUIContent(playerTeam.buildings[i].name, playerTeam.buildingImages[i])))
                     {
                         Build(i);
                     }
