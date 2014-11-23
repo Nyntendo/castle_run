@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     public LayerMask buildSpotLayerMask;
     public GUISkin guiSkin;
     public Texture2D coinTexture;
+	public Texture2D optionsTexture;
 
     public TeamController playerTeam;
     public TeamController enemyTeam;
@@ -165,7 +166,7 @@ public class GameController : MonoBehaviour
             }
         }
 
-        if (GUI.Button(new Rect(Screen.width - 160, 10, 150, 50), "Pause"))
+		if (GUI.Button(new Rect(Screen.width - 100, 10, 70, 70), new GUIContent(optionsTexture), GUIStyle.none))
         {
             if (gameState == GameState.Playing)
                 Pause();
