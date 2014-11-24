@@ -631,7 +631,7 @@ MonoBehaviour:
   keepTargetRange: 12
   attackDamage: 1
   attackSpeed: 2
-  coinValue: 1
+  coinValue: 0
   walkAnimation: skeleton_moving
   attackAnimation: skeleton_attacking
   deathAnimation: skeleton_dying
