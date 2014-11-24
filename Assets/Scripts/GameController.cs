@@ -38,6 +38,11 @@ public class GameController : MonoBehaviour
     public void Start()
     {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
+
+        var matchController= GameObject.FindWithTag("MatchController").GetComponent<MatchController>();
+        playerTeam = matchController.CreatePlayerTeam().GetComponent<TeamController>();
+        enemyTeam = matchController.CreateEnemyTeam().GetComponent<TeamController>();
+
         playerTeam.coins = playerStartCoins;
         enemyTeam.coins = enemyStartCoins;
 

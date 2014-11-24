@@ -22,7 +22,7 @@ public class UnitController : MonoBehaviour
     public string attackAnimation;
     public string deathAnimation;
 
-    private float walkAnimationThreshold = 0.1f;
+    private float walkAnimationThreshold = 0.01f;
 
     public ParticleSystem attackParticleSystem;
 
