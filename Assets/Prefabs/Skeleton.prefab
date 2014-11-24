@@ -623,7 +623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypointReachedThreshold: 3
-  speed: 100
+  speed: 130
   target: {fileID: 0}
   leavesCorpse: 0
   agroRange: 10
