@@ -25,6 +25,7 @@ public class NecromancerAbility : MonoBehaviour
         attackable = GetComponent<Attackable>();
         _animation = GetComponentInChildren<Animation>();
         _animation[raiseDeadAnimation].wrapMode = WrapMode.Once;
+        _animation[raiseDeadAnimation].layer = 1;
     }
 
     public void Update()
@@ -68,7 +69,6 @@ public class NecromancerAbility : MonoBehaviour
     private void CastAt(Transform target)
     {
         _animation.CrossFade(raiseDeadAnimation);
-        _animation.CrossFadeQueued(unitController.walkAnimation);
         Instantiate(effectPrefab, target.position, Quaternion.identity);
 
         var colliders = Physics.OverlapSphere(target.position, radius);

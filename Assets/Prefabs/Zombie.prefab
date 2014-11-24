@@ -652,7 +652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypointReachedThreshold: 3
-  speed: 130
+  speed: 50
   target: {fileID: 0}
   leavesCorpse: 1
   agroRange: 10
@@ -662,9 +662,11 @@ MonoBehaviour:
   attackSpeed: 2
   coinValue: 1
   walkAnimation: zombie_moving
+  idleAnimation: zombie_moving
   attackAnimation: zombie_attacking
   deathAnimation: zombie_dying
   attackParticleSystem: {fileID: 0}
+  lastPos: {x: 0, y: 0, z: 0}
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1

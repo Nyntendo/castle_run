@@ -653,7 +653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypointReachedThreshold: 3
-  speed: 150
+  speed: 50
   target: {fileID: 0}
   leavesCorpse: 1
   agroRange: 20
@@ -663,9 +663,11 @@ MonoBehaviour:
   attackSpeed: 2
   coinValue: 4
   walkAnimation: soldier_moving
+  idleAnimation: soldier_moving
   attackAnimation: soldier_attacking
   deathAnimation: soldier_dying
   attackParticleSystem: {fileID: 0}
+  lastPos: {x: 0, y: 0, z: 0}
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -678,7 +680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 30
-  speedBoost: 300
+  speedBoost: 150
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1

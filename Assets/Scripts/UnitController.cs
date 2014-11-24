@@ -18,8 +18,11 @@ public class UnitController : MonoBehaviour
     public int coinValue;
 
     public string walkAnimation;
+    public string idleAnimation;
     public string attackAnimation;
     public string deathAnimation;
+
+    private float walkAnimationThreshold = 0.1f;
 
     public ParticleSystem attackParticleSystem;
 
@@ -34,6 +37,7 @@ public class UnitController : MonoBehaviour
     private Animation _animation;
     private GameController gameController;
     private bool stunned = false;
+    public Vector3 lastPos = Vector3.zero;
 
     public void Start()
     {
@@ -44,30 +48,16 @@ public class UnitController : MonoBehaviour
 
         _animation = GetComponentInChildren<Animation>();
         _animation[walkAnimation].wrapMode = WrapMode.Loop;
+        _animation[idleAnimation].wrapMode = WrapMode.Loop;
         _animation[attackAnimation].wrapMode = WrapMode.Once;
+        _animation[attackAnimation].layer = 1;
         _animation[deathAnimation].wrapMode = WrapMode.ClampForever;
+        _animation[deathAnimation].layer = 1;
 
+        lastPos = transform.position;
     }
 
     public void Update()
-    {
-        if (gameController.gameState != GameState.Playing)
-            return;
-
-        if (attackable.dead)
-            return;
-
-        if (target == null)
-            target = gameController.GetTarget(attackable.team);
-
-        if (path == null && target != null && !calculatingPath && targetObject == null)
-        {
-            calculatingPath = true;
-            seeker.StartPath(transform.position, target.position, OnPathComplete);
-        }
-    }
-
-    public void FixedUpdate()
     {
         if (gameController.gameState != GameState.Playing)
             return;
@@ -77,7 +67,16 @@ public class UnitController : MonoBehaviour
 
         if (attackTimer > 0f)
         {
-            attackTimer -= Time.fixedDeltaTime;
+            attackTimer -= Time.deltaTime;
+        }
+
+        if (target == null)
+            target = gameController.GetTarget(attackable.team);
+
+        if (path == null && target != null && !calculatingPath && targetObject == null)
+        {
+            calculatingPath = true;
+            seeker.StartPath(transform.position, target.position, OnPathComplete);
         }
 
         if (targetObject != null)
@@ -89,6 +88,7 @@ public class UnitController : MonoBehaviour
                 targetObject = null;
             }
         }
+
 
         if (targetObject == null)
         {
@@ -131,10 +131,24 @@ public class UnitController : MonoBehaviour
         }
     }
 
+    public void LateUpdate()
+    {
+        if (Vector3.Distance(transform.position, lastPos) >= walkAnimationThreshold)
+        {
+            _animation.CrossFade(walkAnimation);
+        }
+        else
+        {
+            _animation.CrossFade(idleAnimation);
+        }
+
+        lastPos = transform.position;
+    }
+
     private void MoveDir(Vector3 dir)
     {
         transform.LookAt(transform.position + dir);
-        controller.SimpleMove(dir * speed * Time.fixedDeltaTime);
+        controller.SimpleMove(dir * speed * Time.deltaTime);
     }
 
     public void OnPathComplete(Path path)
@@ -185,7 +199,6 @@ public class UnitController : MonoBehaviour
             attackParticleSystem.Play();
 
         _animation.CrossFade(attackAnimation);
-        _animation.CrossFadeQueued(walkAnimation);
         target.SendMessage("Hit", attackDamage);
         gameObject.SendMessage("OnAttack", target, SendMessageOptions.DontRequireReceiver);
         attackTimer = attackSpeed;

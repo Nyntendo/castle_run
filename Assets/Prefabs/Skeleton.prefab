@@ -623,7 +623,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypointReachedThreshold: 3
-  speed: 130
+  speed: 100
   target: {fileID: 0}
   leavesCorpse: 0
   agroRange: 10
@@ -633,9 +633,11 @@ MonoBehaviour:
   attackSpeed: 2
   coinValue: 0
   walkAnimation: skeleton_moving
+  idleAnimation: skeleton_idle
   attackAnimation: skeleton_attacking
   deathAnimation: skeleton_dying
   attackParticleSystem: {fileID: 0}
+  lastPos: {x: 0, y: 0, z: 0}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

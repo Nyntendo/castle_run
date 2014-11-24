@@ -711,7 +711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypointReachedThreshold: 3
-  speed: 200
+  speed: 100
   target: {fileID: 0}
   leavesCorpse: 1
   agroRange: 18
@@ -721,9 +721,11 @@ MonoBehaviour:
   attackSpeed: 2
   coinValue: 3
   walkAnimation: archer_moving
+  idleAnimation: archer_idle
   attackAnimation: archer_attacking
   deathAnimation: archer_dying
   attackParticleSystem: {fileID: 19800000}
+  lastPos: {x: 0, y: 0, z: 0}
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
