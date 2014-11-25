@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0f5db3118d1c50143909a37a8728c978
+guid: 7f013bb88ddf3f745891819051352846
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -44,6 +44,7 @@ ModelImporter:
     7400002: zombie_moving
     7400004: zombie_attacking
     7400006: zombie_dying
+    7400008: zombie_idle
     9500000: //RootNode
     11100000: //RootNode
     13700000: v1:polySurface2
@@ -191,7 +192,7 @@ ModelImporter:
       name: zombie_attacking
       takeName: Take 001
       firstFrame: 40
-      lastFrame: 55
+      lastFrame: 60
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -255,6 +256,68 @@ ModelImporter:
       firstFrame: 60
       lastFrame: 100
       wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: v1:joint1
+        weight: 1
+      - path: v1:joint1/v1:joint2
+        weight: 1
+      - path: v1:joint1/v1:joint2/v1:joint3
+        weight: 1
+      - path: v1:joint1/v1:joint2/v1:joint3/v1:joint4
+        weight: 1
+      - path: v1:joint1/v1:joint5
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint6
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint7
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint7/v1:joint8
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint7/v1:joint8/v1:joint9
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint10
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint10/v1:joint11
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint10/v1:joint11/v1:joint12
+        weight: 1
+      - path: v1:joint1/v1:joint13
+        weight: 1
+      - path: v1:joint1/v1:joint13/v1:joint14
+        weight: 1
+      - path: v1:joint1/v1:joint13/v1:joint14/v1:joint15
+        weight: 1
+      - path: v1:polySurface1
+        weight: 1
+      - path: v1:polySurface1/v1:polySurface2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: zombie_idle
+      takeName: Take 001
+      firstFrame: 105
+      lastFrame: 160
+      wrapMode: 2
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
