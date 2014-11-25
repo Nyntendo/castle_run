@@ -175,7 +175,7 @@ public class GameController : MonoBehaviour
         {
             if (gameState == GameState.Playing)
                 Pause();
-            else
+            else if (gameState == GameState.Paused)
                 UnPause();
         }
     }
