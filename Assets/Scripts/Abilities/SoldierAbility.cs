@@ -4,7 +4,7 @@ using System.Collections;
 public class SoldierAbility : MonoBehaviour
 {
     public float cooldown;
-    public int speedBoost;
+    public float speedBoost;
 
     private float cooldownTimer;
     private bool isBoosted = false;
