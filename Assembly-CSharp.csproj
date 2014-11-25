@@ -128,6 +128,7 @@
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
      <Compile Include="Assets\Scripts\MainBuildingController.cs" />
+     <Compile Include="Assets\Scripts\MatchController.cs" />
      <Compile Include="Assets\Scripts\RaiseDeadEffect.cs" />
      <Compile Include="Assets\Scripts\SimpleEnemyAI.cs" />
      <Compile Include="Assets\Scripts\SpawnerController.cs" />
