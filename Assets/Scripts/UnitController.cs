@@ -148,7 +148,7 @@ public class UnitController : MonoBehaviour
     private void MoveDir(Vector3 dir)
     {
         transform.LookAt(transform.position + dir);
-        controller.SimpleMove(dir * speed * Time.deltaTime);
+        controller.SimpleMove(dir * speed);
     }
 
     public void OnPathComplete(Path path)

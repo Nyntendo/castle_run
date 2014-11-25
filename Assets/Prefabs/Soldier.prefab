@@ -653,7 +653,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypointReachedThreshold: 3
-  speed: 150
+  speed: 3.75
   target: {fileID: 0}
   leavesCorpse: 1
   agroRange: 20
@@ -680,7 +680,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cooldown: 30
-  speedBoost: 300
+  speedBoost: 7.5
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1
