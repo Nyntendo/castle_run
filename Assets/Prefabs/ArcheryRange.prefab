@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bef86ae36ea75d941ad8946f510be797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitToSpawn: {fileID: 100002, guid: 97fa9aa6ae7ae224d90f1ab3c015389c, type: 2}
+  unitToSpawn: {fileID: 100002, guid: d445558551788bf4782cc10a8c9567f8, type: 2}
   spawnDelay: 20
   team: 0
   spawnPoint: {x: 0, y: 0, z: 0}
