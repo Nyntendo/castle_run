@@ -16,10 +16,12 @@ public class SpawnerController : MonoBehaviour
 
     private float spawnTimer;
     private GameController gameController;
+    private StatisticsController stats;
 
     public void Start()
     {
         gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
+        stats = GameObject.FindWithTag("StatisticsController").GetComponent<StatisticsController>();
     }
 
     public void SetTeam(Team team)
@@ -36,6 +38,7 @@ public class SpawnerController : MonoBehaviour
 
         if (spawnTimer >= spawnDelay && gameController.CanSpawn(team))
         {
+            stats.LogSpawn(team, unitToSpawn.name);
             var unit = Instantiate(
                     unitToSpawn,
                     spawnPoint,

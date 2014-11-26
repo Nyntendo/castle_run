@@ -34,6 +34,7 @@ public class UnitController : MonoBehaviour
     private bool calculatingPath = false;
     private float attackTimer;
     private GameObject targetObject;
+    private StatisticsController stats;
     private Animation _animation;
     private GameController gameController;
     private bool stunned = false;
@@ -45,6 +46,7 @@ public class UnitController : MonoBehaviour
         controller = GetComponent<CharacterController>();
         attackable = GetComponent<Attackable>();
         gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
+        stats = GameObject.FindWithTag("StatisticsController").GetComponent<StatisticsController>();
 
         _animation = GetComponentInChildren<Animation>();
         _animation[walkAnimation].wrapMode = WrapMode.Loop;
@@ -202,6 +204,8 @@ public class UnitController : MonoBehaviour
         target.SendMessage("Hit", attackDamage);
         gameObject.SendMessage("OnAttack", target, SendMessageOptions.DontRequireReceiver);
         attackTimer = attackSpeed;
+
+        stats.LogDamage(attackable.team, gameObject.name, target.name, attackDamage);
     }
 
     public void OnDeath()
@@ -217,6 +221,7 @@ public class UnitController : MonoBehaviour
 
     public void OnDestroy()
     {
+        stats.LogDeath(attackable.team, gameObject.name);
         gameController.DecrementUnits(attackable.team);
     }
 

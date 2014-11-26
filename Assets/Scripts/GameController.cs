@@ -32,12 +32,15 @@ public class GameController : MonoBehaviour
 
     private Attackable playerMainBuildingAttackable;
     private Attackable enemyMainBuildingAttackable;
+    private StatisticsController stats;
 
     private Team loosingTeam;
 
     public void Start()
     {
         Screen.sleepTimeout = SleepTimeout.NeverSleep;
+
+        stats = GameObject.FindWithTag("StatisticsController").GetComponent<StatisticsController>();
 
         var matchController= GameObject.FindWithTag("MatchController").GetComponent<MatchController>();
         playerTeam = matchController.CreatePlayerTeam().GetComponent<TeamController>();
@@ -184,6 +187,7 @@ public class GameController : MonoBehaviour
     {
         loosingTeam = team;
         gameState = GameState.Finished;
+        stats.PrintReport();
     }
 
     public void Pause()
