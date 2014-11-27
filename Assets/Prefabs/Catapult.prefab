@@ -858,7 +858,7 @@ MonoBehaviour:
   keepTargetRange: 35
   keepTargetMinRange: 20
   attackDamage: 0
-  attackSpeed: 4
+  attackSpeed: 10
   coinValue: 10
   walkAnimation: catapult_moving
   idleAnimation: catapult_idle

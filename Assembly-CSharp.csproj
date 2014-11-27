@@ -119,9 +119,11 @@
      <Compile Include="Assets\AstarPathfindingProject\changelog.cs" />
      <Compile Include="Assets\Graphics\WaterfallFolder\AnimateTiledTexture.cs" />
      <Compile Include="Assets\Graphics\WaterfallFolder\ScrollingTexture.cs" />
+     <Compile Include="Assets\Scripts\Abilities\CatapultAbility.cs" />
      <Compile Include="Assets\Scripts\Abilities\FarmAbility.cs" />
      <Compile Include="Assets\Scripts\Abilities\NecromancerAbility.cs" />
      <Compile Include="Assets\Scripts\Abilities\SoldierAbility.cs" />
+     <Compile Include="Assets\Scripts\Abilities\StoneController.cs" />
      <Compile Include="Assets\Scripts\Abilities\ZombieAbility.cs" />
      <Compile Include="Assets\Scripts\Attackable.cs" />
      <Compile Include="Assets\Scripts\BuildSpotController.cs" />
@@ -134,6 +136,7 @@
      <Compile Include="Assets\Scripts\RaiseDeadEffect.cs" />
      <Compile Include="Assets\Scripts\SimpleEnemyAI.cs" />
      <Compile Include="Assets\Scripts\SpawnerController.cs" />
+     <Compile Include="Assets\Scripts\StatisticsController.cs" />
      <Compile Include="Assets\Scripts\TeamController.cs" />
      <Compile Include="Assets\Scripts\UnitController.cs" />
      <None Include="Assets\Standard Assets\Toon Shading\Sources\Shaders\Toony-Basic.shader" />
