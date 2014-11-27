@@ -243,7 +243,6 @@ GameObject:
   - 114: {fileID: 11400000}
   - 143: {fileID: 14300000}
   - 114: {fileID: 11400010}
-  - 136: {fileID: 13600000}
   m_Layer: 8
   m_Name: Necromancer
   m_TagString: Unit
@@ -634,19 +633,6 @@ MonoBehaviour:
   raiseDeadAnimation: necro_riseDead
   tryAgainDelay: 2
   effectPrefab: {fileID: 100002, guid: 0345e0df33f1a844fa3b83e6019ee4b9, type: 2}
---- !u!136 &13600000
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100030}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: .699999988
-  m_Height: 4
-  m_Direction: 1
-  m_Center: {x: 0, y: 2, z: 0}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
