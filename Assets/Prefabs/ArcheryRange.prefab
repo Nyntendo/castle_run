@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 108.495209, y: 1.1475991, z: 246.8367}
+  m_LocalPosition: {x: 127.559433, y: .915663719, z: 248.820618}
   m_LocalScale: {x: .233773053, y: .233773053, z: .233773053}
   m_Children:
   - {fileID: 400000}
@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bef86ae36ea75d941ad8946f510be797, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitToSpawn: {fileID: 100002, guid: d445558551788bf4782cc10a8c9567f8, type: 2}
+  unitToSpawn: {fileID: 100002, guid: 97fa9aa6ae7ae224d90f1ab3c015389c, type: 2}
   spawnDelay: 20
   team: 0
   spawnPoint: {x: 0, y: 0, z: 0}

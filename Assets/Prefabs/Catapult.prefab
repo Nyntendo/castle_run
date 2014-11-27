@@ -883,11 +883,11 @@ MonoBehaviour:
   speed: 5
   target: {fileID: 0}
   leavesCorpse: 1
-  agroRange: 18
-  attackRange: 18
+  agroRange: 21
+  attackRange: 21
   keepTargetRange: 12
-  attackDamage: 1
-  attackSpeed: 2
+  attackDamage: 5
+  attackSpeed: 4
   coinValue: 3
   walkAnimation: catapult_moving
   idleAnimation: catapult_idle

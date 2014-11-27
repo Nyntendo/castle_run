@@ -45,11 +45,13 @@ MonoBehaviour:
   - {fileID: 100000, guid: 383a139a48fc2b24590c869813471b7f, type: 2}
   - {fileID: 100004, guid: b9c05fd93a23e8040a71391fcc9a4537, type: 2}
   - {fileID: 100002, guid: 53ca8d09cd98c2b42af63904a06744ee, type: 2}
-  buildingCosts: 190000004100000028000000
+  - {fileID: 100000, guid: c715ec406724a7e4498473f8d566e0c4, type: 2}
+  buildingCosts: 19000000410000002800000096000000
   buildingImages:
   - {fileID: 2800000, guid: a9fc77ee20b977e4bbc3cd4c64f6cbfb, type: 3}
   - {fileID: 2800000, guid: 2f82a6e7082811841a0adf653c6e08c8, type: 3}
   - {fileID: 2800000, guid: e08904c95e44288459586718fe4cd377, type: 3}
+  - {fileID: 2800000, guid: c86963a9ef86daa4cb1afc09bc46d8bc, type: 3}
   income: 1
   incomeDelay: 3
   currentNumberOfUnits: 0
