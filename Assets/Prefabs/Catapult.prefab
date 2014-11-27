@@ -856,6 +856,7 @@ MonoBehaviour:
   agroRange: 30
   attackRange: 30
   keepTargetRange: 35
+  keepTargetMinRange: 20
   attackDamage: 0
   attackSpeed: 4
   coinValue: 10
@@ -878,7 +879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   catapultStonePrefab: {fileID: 100002, guid: 0a7794289c689784881b175ba25854f1, type: 2}
   launchOffset: {x: -2, y: 3, z: 0}
-  launchForce: 8000
+  launchForce: 8500
   launchAngle: 45
   launchDelay: .400000006
 --- !u!137 &13700000

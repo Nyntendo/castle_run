@@ -13,6 +13,7 @@ public class UnitController : MonoBehaviour
     public float agroRange;
     public float attackRange;
     public float keepTargetRange;
+    public float keepTargetMinRange = 0;
     public int attackDamage;
     public float attackSpeed;
     public int coinValue;
@@ -85,7 +86,7 @@ public class UnitController : MonoBehaviour
         {
             var distance = Vector3.Distance(transform.position, targetObject.transform.position);
 
-            if (distance > keepTargetRange || targetObject.GetComponent<Attackable>().dead)
+            if (distance > keepTargetRange || distance < keepTargetMinRange || targetObject.GetComponent<Attackable>().dead)
             {
                 targetObject = null;
             }
@@ -179,7 +180,7 @@ public class UnitController : MonoBehaviour
             {
                 var distance = Vector3.Distance(transform.position, colliders[i].transform.position);
 
-                if (distance < targetDistance)
+                if (distance < targetDistance && distance > keepTargetMinRange)
                 {
                     newTarget = colliders[i].gameObject;
                     targetDistance = distance;
