@@ -51,7 +51,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 111893b49e9ca8148b16ca425da38860, type: 3}
   - {fileID: 2800000, guid: 74b7ab6aa081f1548a439eb63c35d2d3, type: 3}
   - {fileID: 2800000, guid: c7c22c0e8cd74094b8efe3dd49cab897, type: 3}
-  - {fileID: 2800000, guid: eeb487b1d55e37c429bfce92713c1407, type: 3}
+  - {fileID: 2800000, guid: 162e488da47bacf4a983e4bbe70b6d55, type: 3}
   income: 1
   incomeDelay: 3
   currentNumberOfUnits: 0
