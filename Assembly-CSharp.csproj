@@ -124,6 +124,7 @@
      <Compile Include="Assets\Scripts\Abilities\NecromancerAbility.cs" />
      <Compile Include="Assets\Scripts\Abilities\SoldierAbility.cs" />
      <Compile Include="Assets\Scripts\Abilities\StoneController.cs" />
+     <Compile Include="Assets\Scripts\Abilities\VampireAbility.cs" />
      <Compile Include="Assets\Scripts\Abilities\ZombieAbility.cs" />
      <Compile Include="Assets\Scripts\Attackable.cs" />
      <Compile Include="Assets\Scripts\BuildSpotController.cs" />
