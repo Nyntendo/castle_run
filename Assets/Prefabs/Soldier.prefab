@@ -684,9 +684,10 @@ MonoBehaviour:
   speed: 3.75
   target: {fileID: 0}
   leavesCorpse: 1
-  agroRange: 20
+  agroRange: 15
   attackRange: 2
   keepTargetRange: 12
+  keepTargetMinRange: 0
   attackDamage: 4
   attackSpeed: 2
   coinValue: 4
