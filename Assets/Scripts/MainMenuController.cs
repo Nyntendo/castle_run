@@ -14,7 +14,7 @@ public class MainMenuController : MonoBehaviour
     private MainMenuState state = MainMenuState.Init;
 
     private int level = 0;
-    private string[] levelStrings = {"Pine Forest"};
+    private string[] levelStrings = {"Pine Forest", "Frozen Plateau"};
 
     private int playerRace = 0;
     private int enemyRace = 1;
@@ -30,7 +30,7 @@ public class MainMenuController : MonoBehaviour
     public void OnGUI()
     {
         GUI.skin = skin;
-        GUI.Box(new Rect(center.x - 150, center.y - 200, 300, 400), "Tower Wars");
+        GUI.Box(new Rect(center.x - 200, center.y - 200, 400, 400), "Tower Wars");
 
         if (state == MainMenuState.Init)
         {
@@ -41,18 +41,17 @@ public class MainMenuController : MonoBehaviour
         }
         else if (state == MainMenuState.SetupLevel)
         {
-            level = GUI.Toolbar(new Rect(center.x - 100, center.y - 150, 200, 50), level, levelStrings);
+            level = GUI.Toolbar(new Rect(center.x - 150, center.y - 150, 300, 50), level, levelStrings);
 
-            playerRace = GUI.Toolbar(new Rect(center.x - 100, center.y - 75, 200, 50), playerRace, raceStrings);
+            playerRace = GUI.Toolbar(new Rect(center.x - 150, center.y - 75, 300, 50), playerRace, raceStrings);
 
-            enemyRace = GUI.Toolbar(new Rect(center.x - 100, center.y, 200, 50), enemyRace, raceStrings);
+            enemyRace = GUI.Toolbar(new Rect(center.x - 150, center.y, 300, 50), enemyRace, raceStrings);
 
             if (GUI.Button(new Rect(center.x - 100, center.y + 100, 200, 50), "Start Game"))
             {
                 matchController.playerRace = (Race)playerRace;
                 matchController.enemyRace = (Race)enemyRace;
-                //Application.LoadLevel(1);
-				Application.LoadLevel(2);
+                Application.LoadLevel(level + 1);
             }
         }
     }
