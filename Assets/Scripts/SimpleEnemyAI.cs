@@ -15,6 +15,11 @@ public class SimpleEnemyAI : MonoBehaviour
     {
         gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
         this.team = gameController.enemyTeam;
+
+        for (int i = 1; i < buildQueue.Length; i++)
+        {
+            buildQueue[i] = Random.Range(0, this.team.buildings.Length);
+        }
     }
 
     public void Update()

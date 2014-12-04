@@ -14,6 +14,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   - 143: {fileID: 14300000}
+  - 114: {fileID: 11400010}
   m_Layer: 8
   m_Name: Vampire
   m_TagString: Unit
@@ -751,6 +752,8 @@ MonoBehaviour:
   dead: 0
   unitType: 1
   canAttack: 1
+  stealthed: 1
+  detector: 0
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -776,9 +779,21 @@ MonoBehaviour:
   walkAnimation: vampire_moving
   idleAnimation: vampire_idle
   attackAnimation: vampire_attacking
-  deathAnimation: vampire_dying
+  deathAnimation: vampie_dying
   attackParticleSystem: {fileID: 0}
   lastPos: {x: 0, y: 0, z: 0}
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eba5966529996f4408d0092657d497a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 5
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

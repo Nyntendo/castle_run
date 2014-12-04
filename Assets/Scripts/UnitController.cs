@@ -176,6 +176,8 @@ public class UnitController : MonoBehaviour
             if (attackable != null &&
                 !attackable.dead &&
                 attackable.team != this.attackable.team &&
+                (!this.attackable.stealthed || (this.attackable.stealthed && attackable.detector)) &&
+                (!attackable.stealthed ||(attackable.stealthed && this.attackable.detector)) &&
                 (this.attackable.canAttack & attackable.unitType) > 0)
             {
                 var distance = Vector3.Distance(transform.position, colliders[i].transform.position);

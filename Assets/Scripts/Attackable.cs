@@ -17,11 +17,25 @@ public class Attackable : MonoBehaviour
     public bool dead = false;
     public UnitType unitType;
     public UnitType canAttack;
+    public bool stealthed = false;
+    public bool detector = false;
+
+    private int originalLayer;
 
     public void Start()
     {
         health = maxHealth;
         dead = false;
+        originalLayer = gameObject.layer;
+        SetStealthed(stealthed);
+    }
+
+    public void SetStealthed(bool stealthed)
+    {
+        if (gameObject.tag != "Unit")
+            return;
+        this.stealthed = stealthed;
+        gameObject.layer = stealthed?LayerMask.NameToLayer("StealthedUnits"):originalLayer;
     }
 
     public void Hit(int damage)
