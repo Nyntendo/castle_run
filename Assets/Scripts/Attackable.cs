@@ -36,6 +36,14 @@ public class Attackable : MonoBehaviour
             return;
         this.stealthed = stealthed;
         gameObject.layer = stealthed?LayerMask.NameToLayer("StealthedUnits"):originalLayer;
+
+        var shader = Shader.Find(stealthed?"Transparent/Diffuse":"Toon/Lighted");
+
+        var renderers = GetComponentsInChildren<Renderer>();
+        foreach (var r in renderers)
+        {
+            r.material.shader = shader;
+        }
     }
 
     public void Hit(int damage)

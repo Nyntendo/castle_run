@@ -323,6 +323,8 @@ MonoBehaviour:
   dead: 0
   unitType: 3
   canAttack: 3
+  stealthed: 0
+  detector: 1
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

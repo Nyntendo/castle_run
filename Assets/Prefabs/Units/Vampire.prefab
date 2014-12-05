@@ -745,7 +745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f70ab77b4919dca4db6af21bd0ff9138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 12
+  maxHealth: 25
   health: 0
   hitRange: 1
   team: 0
@@ -773,9 +773,9 @@ MonoBehaviour:
   attackRange: 2
   keepTargetRange: 12
   keepTargetMinRange: 0
-  attackDamage: 1
+  attackDamage: 3
   attackSpeed: 2
-  coinValue: 1
+  coinValue: 8
   walkAnimation: vampire_moving
   idleAnimation: vampire_idle
   attackAnimation: vampire_attacking
