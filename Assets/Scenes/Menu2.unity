@@ -436,6 +436,11 @@ Prefab:
       propertyPath: matchController
       value: 
       objectReference: {fileID: 548936363}
+    - target: {fileID: 11400000, guid: f8742a65167a02441b5c125a79f99026, type: 2}
+      propertyPath: skin
+      value: 
+      objectReference: {fileID: 11400000, guid: 98c6966845c16074dbad77dc398e69d4,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f8742a65167a02441b5c125a79f99026, type: 2}
   m_RootGameObject: {fileID: 956351053}
@@ -543,7 +548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e5e877e068a454cb29addc4f5d619e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skin: {fileID: 11400000, guid: 2e6d96f0c7c75634a93d43b932aecbbb, type: 2}
+  skin: {fileID: 11400000, guid: 98c6966845c16074dbad77dc398e69d4, type: 2}
   matchController: {fileID: 548936363}
 --- !u!4 &956351055
 Transform:
