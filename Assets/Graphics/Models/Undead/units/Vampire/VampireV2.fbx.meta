@@ -1,0 +1,438 @@
+fileFormatVersion: 2
+guid: 7128577062b7b274486221eb84885f61
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: v1:joint1
+    100002: v1:joint10
+    100004: v1:joint11
+    100006: v1:joint12
+    100008: v1:joint13
+    100010: v1:joint14
+    100012: v1:joint15
+    100014: v1:joint19
+    100016: v1:joint20
+    100018: v1:joint21
+    100020: v1:joint22
+    100022: v1:joint23
+    100024: v1:joint24
+    100026: v1:joint25
+    100028: v1:joint26
+    100030: v1:joint5
+    100032: v1:joint6
+    100034: v1:polySurface1
+    100036: v1:polySurface2
+    100038: //RootNode
+    400000: v1:joint1
+    400002: v1:joint10
+    400004: v1:joint11
+    400006: v1:joint12
+    400008: v1:joint13
+    400010: v1:joint14
+    400012: v1:joint15
+    400014: v1:joint19
+    400016: v1:joint20
+    400018: v1:joint21
+    400020: v1:joint22
+    400022: v1:joint23
+    400024: v1:joint24
+    400026: v1:joint25
+    400028: v1:joint26
+    400030: v1:joint5
+    400032: v1:joint6
+    400034: v1:polySurface1
+    400036: v1:polySurface2
+    400038: //RootNode
+    4300000: v1:polySurface2
+    7400000: vampire_tPose
+    7400002: vampire_moving
+    7400004: vampire_attacking
+    7400006: vampire_dying
+    7400008: vampire_idle
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: v1:polySurface2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: vampire_tPose
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: .100000001
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: v1:joint1
+        weight: 1
+      - path: v1:joint1/v1:joint5
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint6
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint10
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint10/v1:joint11
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint10/v1:joint11/v1:joint12
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint10/v1:joint11/v1:joint12/v1:joint19
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint20
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint20/v1:joint21
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint20/v1:joint21/v1:joint22
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint20/v1:joint21/v1:joint22/v1:joint23
+        weight: 1
+      - path: v1:joint1/v1:joint13
+        weight: 1
+      - path: v1:joint1/v1:joint13/v1:joint14
+        weight: 1
+      - path: v1:joint1/v1:joint13/v1:joint14/v1:joint15
+        weight: 1
+      - path: v1:joint1/v1:joint24
+        weight: 1
+      - path: v1:joint1/v1:joint24/v1:joint25
+        weight: 1
+      - path: v1:joint1/v1:joint24/v1:joint25/v1:joint26
+        weight: 1
+      - path: v1:polySurface1
+        weight: 1
+      - path: v1:polySurface1/v1:polySurface2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: vampire_moving
+      takeName: Take 001
+      firstFrame: 5
+      lastFrame: 35
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: v1:joint1
+        weight: 1
+      - path: v1:joint1/v1:joint5
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint6
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint10
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint10/v1:joint11
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint10/v1:joint11/v1:joint12
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint10/v1:joint11/v1:joint12/v1:joint19
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint20
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint20/v1:joint21
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint20/v1:joint21/v1:joint22
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint20/v1:joint21/v1:joint22/v1:joint23
+        weight: 1
+      - path: v1:joint1/v1:joint13
+        weight: 1
+      - path: v1:joint1/v1:joint13/v1:joint14
+        weight: 1
+      - path: v1:joint1/v1:joint13/v1:joint14/v1:joint15
+        weight: 1
+      - path: v1:joint1/v1:joint24
+        weight: 1
+      - path: v1:joint1/v1:joint24/v1:joint25
+        weight: 1
+      - path: v1:joint1/v1:joint24/v1:joint25/v1:joint26
+        weight: 1
+      - path: v1:polySurface1
+        weight: 1
+      - path: v1:polySurface1/v1:polySurface2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: vampire_attacking
+      takeName: Take 001
+      firstFrame: 40
+      lastFrame: 60
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: v1:joint1
+        weight: 1
+      - path: v1:joint1/v1:joint5
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint6
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint10
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint10/v1:joint11
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint10/v1:joint11/v1:joint12
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint10/v1:joint11/v1:joint12/v1:joint19
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint20
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint20/v1:joint21
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint20/v1:joint21/v1:joint22
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint20/v1:joint21/v1:joint22/v1:joint23
+        weight: 1
+      - path: v1:joint1/v1:joint13
+        weight: 1
+      - path: v1:joint1/v1:joint13/v1:joint14
+        weight: 1
+      - path: v1:joint1/v1:joint13/v1:joint14/v1:joint15
+        weight: 1
+      - path: v1:joint1/v1:joint24
+        weight: 1
+      - path: v1:joint1/v1:joint24/v1:joint25
+        weight: 1
+      - path: v1:joint1/v1:joint24/v1:joint25/v1:joint26
+        weight: 1
+      - path: v1:polySurface1
+        weight: 1
+      - path: v1:polySurface1/v1:polySurface2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: vampire_dying
+      takeName: Take 001
+      firstFrame: 60
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: v1:joint1
+        weight: 1
+      - path: v1:joint1/v1:joint5
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint6
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint10
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint10/v1:joint11
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint10/v1:joint11/v1:joint12
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint10/v1:joint11/v1:joint12/v1:joint19
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint20
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint20/v1:joint21
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint20/v1:joint21/v1:joint22
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint20/v1:joint21/v1:joint22/v1:joint23
+        weight: 1
+      - path: v1:joint1/v1:joint13
+        weight: 1
+      - path: v1:joint1/v1:joint13/v1:joint14
+        weight: 1
+      - path: v1:joint1/v1:joint13/v1:joint14/v1:joint15
+        weight: 1
+      - path: v1:joint1/v1:joint24
+        weight: 1
+      - path: v1:joint1/v1:joint24/v1:joint25
+        weight: 1
+      - path: v1:joint1/v1:joint24/v1:joint25/v1:joint26
+        weight: 1
+      - path: v1:polySurface1
+        weight: 1
+      - path: v1:polySurface1/v1:polySurface2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: vampire_idle
+      takeName: Take 001
+      firstFrame: 105
+      lastFrame: 180
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: v1:joint1
+        weight: 1
+      - path: v1:joint1/v1:joint5
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint6
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint10
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint10/v1:joint11
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint10/v1:joint11/v1:joint12
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint10/v1:joint11/v1:joint12/v1:joint19
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint20
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint20/v1:joint21
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint20/v1:joint21/v1:joint22
+        weight: 1
+      - path: v1:joint1/v1:joint5/v1:joint20/v1:joint21/v1:joint22/v1:joint23
+        weight: 1
+      - path: v1:joint1/v1:joint13
+        weight: 1
+      - path: v1:joint1/v1:joint13/v1:joint14
+        weight: 1
+      - path: v1:joint1/v1:joint13/v1:joint14/v1:joint15
+        weight: 1
+      - path: v1:joint1/v1:joint24
+        weight: 1
+      - path: v1:joint1/v1:joint24/v1:joint25
+        weight: 1
+      - path: v1:joint1/v1:joint24/v1:joint25/v1:joint26
+        weight: 1
+      - path: v1:polySurface1
+        weight: 1
+      - path: v1:polySurface1/v1:polySurface2
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
