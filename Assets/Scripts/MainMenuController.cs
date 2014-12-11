@@ -30,7 +30,7 @@ public class MainMenuController : MonoBehaviour
     public void OnGUI()
     {
         GUI.skin = skin;
-        GUI.Box(new Rect(center.x - 200, center.y - 100, 400, 400), "Tower Wars");
+        GUI.Label(new Rect(center.x - 200, center.y - 100, 400, 400),"");
 
         if (state == MainMenuState.Init)
         {
