@@ -35,21 +35,21 @@ public class MainMenuController : MonoBehaviour
 
         if (state == MainMenuState.Init)
         {
-			if (GUI.Button(new Rect(center.x - 100, center.y, 200, 75), "Play Demo"))
+			if (GUI.Button(new Rect(center.x - 100, center.y, 250, 100), "Play Demo"))
             {
                 state = MainMenuState.SetupLevel;
             }
         }
         else if (state == MainMenuState.SetupLevel)
         {
-			level = GUI.Toolbar(new Rect(center.x - 150, center.y - 50, 300, 75), level, levelStrings);
+			level = GUI.Toolbar(new Rect(center.x - 150, center.y - 50, 350, 100), level, levelStrings);
 
-			playerRace = GUI.Toolbar(new Rect(center.x - 150, center.y + 25, 300, 75), playerRace, raceStrings);
+			playerRace = GUI.Toolbar(new Rect(center.x - 150, center.y + 25, 350, 100), playerRace, raceStrings);
 
-			enemyRace = GUI.Toolbar(new Rect(center.x - 150, center.y + 100, 300, 75), enemyRace, raceStrings);
+			enemyRace = GUI.Toolbar(new Rect(center.x - 150, center.y + 100, 350, 100), enemyRace, raceStrings);
 
 
-            if (GUI.Button(new Rect(center.x - 100, center.y + 175, 200, 75), "Start Game"))
+            if (GUI.Button(new Rect(center.x - 100, center.y + 175, 250, 100), "Start Game"))
             {
                 matchController.playerRace = (Race)playerRace;
                 matchController.enemyRace = (Race)enemyRace;
